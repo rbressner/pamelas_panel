@@ -1,5 +1,17 @@
-<p id="notice"><%= notice %></p>
+<nav>
+  <h4><%= @admin.last_name %>, <%= @admin.first_name %></h4>
+  <ul class="admin-nav">
+    <% @admins.each do |admin| %>
+        <li><%= link_to 'Profile', admin %></li>
+        <li><%= link_to 'Teachers', admin %></li>
+        <li><%= link_to 'Students', admin %></li>
+        <li><%= link_to 'Courses', admin %></li>
+      <% end %>
+  </ul>
+</nav>
 
+<p id="notice"><%= notice %></p>
+<div class="profile">
 <p>
   <strong>Username:</strong>
   <%= @admin.username %>
@@ -27,3 +39,5 @@
 
 <%= link_to 'Edit', edit_admin_path(@admin) %> |
 <%= link_to 'Back', admins_path %>
+
+</div>

@@ -1,35 +1,19 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Admins</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Username</th>
-      <th>First name</th>
-      <th>Last name</th>
-      <th>Email</th>
-      <th>Password</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
+<nav>
+  <h4><%= @admin.last_name %>, <%= @admin.first_name %></h4>
+  <ul class="admin-nav">
     <% @admins.each do |admin| %>
-      <tr>
-        <td><%= admin.username %></td>
-        <td><%= admin.first_name %></td>
-        <td><%= admin.last_name %></td>
-        <td><%= admin.email %></td>
-        <td><%= admin.password %></td>
-        <td><%= link_to 'Show', admin %></td>
-        <td><%= link_to 'Edit', edit_admin_path(admin) %></td>
-        <td><%= link_to 'Destroy', admin, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+        <li><%= link_to 'Profile', admin %></li>
+        <li><%= link_to 'Teachers', admin %></li>
+        <li><%= link_to 'Students', admin %></li>
+        <li><%= link_to 'Courses', admin %></li>
+        <li><%= link_to 'Edit Profile', edit_admin_path(admin) %></li>
+        <li><%= link_to 'Delete Profile', admin, method: :delete, data: { confirm: 'Are you sure?' } %></li>
     <% end %>
-  </tbody>
-</table>
+  </ul>
+</nav>
 
-<br>
+<p id="notice"><%= notice %></p>
+<div class="admin-home-page">
+<h1>Welcome</h1>
 
-<%= link_to 'New Admin', new_admin_path %>
+</div>

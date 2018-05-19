@@ -5,13 +5,19 @@ class AdminsController < ApplicationController
   # GET /admins.json
   def index
     @admins = Admin.all
+    @admin = Admin.find(1)
   end
 
   # GET /admins/1
   # GET /admins/1.json
   def show
+    @admins = Admin.all
+    @admin = Admin.find(1)
   end
 
+  def full_name
+
+  end
   # GET /admins/new
   def new
     @admin = Admin.new

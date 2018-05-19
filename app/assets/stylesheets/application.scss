@@ -9,4 +9,96 @@
  background-color: #17141f;
  color: white;
  font-family: $varela;
+ height: 1000px;
  }
+ body::-webkit-scrollbar {
+     width: 15px;
+ }
+ body::-webkit-scrollbar-thumb {
+     background: radial-gradient(circle, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.2));
+     width: 6px;
+     opacity: 0.7;
+     border-radius: 7px;
+     border: 1px solid rgba(255, 255, 255, 0.5);
+ }
+ body::-webkit-scrollbar-track {
+     background-color: rgba(0, 0, 0, 0.5);
+ }
+nav {
+  display: flex;
+  flex-flow: column;
+  background: #0e0c13;
+  width: 15%;
+  border-right: 1px solid #2c2541;
+  border-top: 1px solid #2c2541;
+  float: left;
+  margin-left: -2%;
+  padding-left: 0.5%;
+  height: 100%;
+  h4 {
+    padding-left: 5%;
+  }
+  ul {
+      padding-left: 0;
+  }
+    li {
+      padding-left: 5%;
+      padding-bottom: 15px;
+      margin: auto;
+      list-style-type: none;
+      color: white;
+      font-family: $nunito;
+  }
+  li:hover {
+    background: #6441a4;
+    cursor: pointer;
+  }
+  a:visited {
+    color: white;
+    text-decoration: none;
+  }
+  a {
+    color: white;
+    text-decoration: none;
+  }
+  a:hover {
+    background: #6441a4;
+    cursor: pointer;
+  }
+}
+.profile {
+  text-align: center;
+  font-family: $varela;
+  strong {
+    color: #b19dd8;
+  }
+}
+form {
+  text-align: center;
+  select:hover {
+    cursor: pointer;
+  }
+  input[type=submit]:hover {
+    cursor: pointer;
+  }
+  input[type=submit] {
+    width: 10%;
+    height: 30px;
+    text-align: center;
+    border: 2px solid #2c2541;
+    background: #281b2f;
+    color: #b47bcf;
+  }
+  input[type=text], input[type=password], select {
+    width: 25%;
+    height: 25px;
+    text-align: center;
+    border: 2px solid #2c2541;
+    background: #281b2f;
+    color: #b47bcf;
+  }
+  p {
+    font-family: $nunito;
+    color: #b47bcf;
+  }
+}
