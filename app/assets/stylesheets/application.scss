@@ -1,0 +1,12 @@
+/*
+ *= require_tree .
+ *= require_self
+ */
+ $poppins: 'Poppins', sans-serif;
+ $nunito: 'Nunito Sans', sans-serif;
+ $varela: 'Varela Round', sans-serif;
+ body {
+ background-color: #17141f;
+ color: white;
+ font-family: $varela;
+ }
