@@ -11,33 +11,35 @@
 </nav>
 
 <p id="notice"><%= notice %></p>
+<div class="content">
+  <h1>Profile</h1>
 <div class="profile">
 <p>
   <strong>Username:</strong>
   <%= @admin.username %>
 </p>
-
+<hr>
 <p>
   <strong>First name:</strong>
   <%= @admin.first_name %>
 </p>
-
+<hr>
 <p>
   <strong>Last name:</strong>
   <%= @admin.last_name %>
 </p>
-
+<hr>
 <p>
   <strong>Email:</strong>
   <%= @admin.email %>
 </p>
+<hr>
 
 <p>
-  <strong>Password:</strong>
-  <%= @admin.password %>
+<strong><%= link_to 'Edit Profile', edit_admin_path(@admin) %></strong>
 </p>
 
-<%= link_to 'Edit', edit_admin_path(@admin) %> |
-<%= link_to 'Back', admins_path %>
+<!-- <%= link_to 'Back', admins_path %> -->
 
+</div>
 </div>

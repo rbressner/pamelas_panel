@@ -11,32 +11,34 @@
     </div>
   <% end %>
 
+<div class="edit-form">
   <div class="field">
-    <%= form.label :username %>
+    <div class="item-tag"><%= form.label :username %></div>
     <%= form.text_field :username %>
   </div>
 
   <div class="field">
-    <%= form.label :first_name %>
+    <div class="item-tag"><%= form.label :first_name %></div>
     <%= form.text_field :first_name %>
   </div>
 
   <div class="field">
-    <%= form.label :last_name %>
+    <div class="item-tag"><%= form.label :last_name %></div>
     <%= form.text_field :last_name %>
   </div>
 
   <div class="field">
-    <%= form.label :email %>
+    <div class="item-tag"><%= form.label :email %></div>
     <%= form.text_field :email %>
   </div>
 
   <div class="field">
-    <%= form.label :password %>
+    <div class="item-tag"><%= form.label :password %></div>
     <%= form.text_field :password %>
   </div>
 
   <div class="actions">
     <%= form.submit %>
   </div>
+</div>
 <% end %>

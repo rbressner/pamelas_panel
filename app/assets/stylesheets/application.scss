@@ -66,39 +66,59 @@ nav {
     cursor: pointer;
   }
 }
+.content {
+  width: 70%;
+  margin-left: 20%;
+}
+
 .profile {
   text-align: center;
   font-family: $varela;
-  strong {
+  border: 2px solid #2c2541;
+  background: #281b2f;
+  width: 100%;
+  a:visited {
     color: #b19dd8;
+    text-decoration: underline;
   }
-}
-form {
-  text-align: center;
-  select:hover {
+  a {
+    color: #b19dd8;
+    text-decoration: underline;
+  }
+  a:hover {
+    color: white;
+    background: #6441a4;
     cursor: pointer;
-  }
-  input[type=submit]:hover {
-    cursor: pointer;
-  }
-  input[type=submit] {
-    width: 10%;
-    height: 30px;
-    text-align: center;
-    border: 2px solid #2c2541;
-    background: #281b2f;
-    color: #b47bcf;
-  }
-  input[type=text], input[type=password], select {
-    width: 25%;
-    height: 25px;
-    text-align: center;
-    border: 2px solid #2c2541;
-    background: #281b2f;
-    color: #b47bcf;
   }
   p {
+    font-size: 130%;
+    padding: 10px;
+  }
+  hr {
+    border: 1px solid #2c2541;
+  }
+  strong {
+    text-decoration: underline;
+    color: #b19dd8;
     font-family: $nunito;
-    color: #b47bcf;
+  }
+}
+.edit-form {
+  text-align: center;
+  font-family: $varela;
+  border: 2px solid #2c2541;
+  background: #281b2f;
+  width: 100%;
+  p {
+    font-size: 130%;
+    padding: 10px;
+  }
+  hr {
+    border: 1px solid #2c2541;
+  }
+  strong {
+    text-decoration: underline;
+    color: #b19dd8;
+    font-family: $nunito;
   }
 }

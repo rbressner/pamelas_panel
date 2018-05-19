@@ -12,7 +12,7 @@ class AdminsController < ApplicationController
   # GET /admins/1.json
   def show
     @admins = Admin.all
-    @admin = Admin.find(1)
+    @admin = Admin.find(params[:id])
   end
 
   def full_name
@@ -25,6 +25,8 @@ class AdminsController < ApplicationController
 
   # GET /admins/1/edit
   def edit
+    @admins = Admin.all
+    @admin = Admin.find(params[:id])
   end
 
   # POST /admins
