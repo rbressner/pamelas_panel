@@ -1,37 +1,48 @@
-<%= form_with(model: teacher_cohort, local: true) do |form| %>
-  <% if teacher_cohort.errors.any? %>
+<%= form_with(model: student_cohort, local: true) do |form| %>
+  <% if student_cohort.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(teacher_cohort.errors.count, "error") %> prohibited this teacher_cohort from being saved:</h2>
+      <h2><%= pluralize(student_cohort.errors.count, "error") %> prohibited this student_cohort from being saved:</h2>
 
       <ul>
-      <% teacher_cohort.errors.full_messages.each do |message| %>
+      <% student_cohort.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= form.label :teacher_id %>
-    <%= form.number_field :teacher_id %>
+  <div class="edit-form">
+  <div class="edit-section">
+    <div class="item-tag">
+    <%= form.label :teacher_id %></div>
+    <div class="field"><%= form.number_field :teacher_id %>
   </div>
+</div>
 
-  <div class="field">
-    <%= form.label :cohort_id %>
-    <%= form.number_field :cohort_id %>
-  </div>
+<div class="edit-section">
+  <div class="item-tag">
+  <%= form.label :cohort_id %></div>
+  <div class="field"><%= form.number_field :cohort_id %>
+</div>
+</div>
 
-  <div class="field">
-    <%= form.label :teacher_id %>
-    <%= form.text_field :teacher_id %>
-  </div>
+<div class="edit-section">
+  <div class="item-tag">
+  <%= form.label :teacher_id %></div>
+  <div class="field"><%= form.text_field :teacher_id %>
+</div>
+</div>
 
-  <div class="field">
-    <%= form.label :cohort_id %>
-    <%= form.text_field :cohort_id %>
-  </div>
+<div class="edit-section">
+  <div class="item-tag">
+  <%= form.label :cohort_id %></div>
+  <div class="field"><%= form.text_field :cohort_id %>
+</div>
+</div>
 
+  <div class="edit-section">
   <div class="actions">
     <%= form.submit %>
   </div>
+</div>
+</div>
 <% end %>

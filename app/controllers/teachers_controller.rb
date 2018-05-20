@@ -23,7 +23,7 @@ class TeachersController < ApplicationController
 
   # GET /teachers/new
   def new
-    @teacher = current_admin.teachers.build
+    @teacher = Teacher.new
     @admins = Admin.all
     @admin = Admin.find(1)
   end
@@ -35,7 +35,7 @@ class TeachersController < ApplicationController
   # POST /teachers
   # POST /teachers.json
   def create
-    @teacher = current_admin.teachers.build(teacher_params)
+    @teacher = Teacher.new(teacher_params)
     @admins = Admin.all
     @admin = Admin.find(1)
 

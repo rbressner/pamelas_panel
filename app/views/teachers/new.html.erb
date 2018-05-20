@@ -1,20 +1,8 @@
-<nav>
-  <h4><%= @admin.last_name %>, <%= @admin.first_name %></h4>
-  <ul class="admin-nav">
-    <% @admins.each do |admin| %>
-        <li><%= link_to 'Home', admin %></li>
-        <li><%= link_to 'Profile', admin %></li>
-        <li><%= link_to 'Teachers', admin %></li>
-        <li><%= link_to 'Students', admin %></li>
-        <li><%= link_to 'Courses', admin %></li>
-      <% end %>
-  </ul>
-</nav>
-
 <div class="content">
 <h1>New Teacher</h1>
 
 <%= render 'form', teacher: @teacher %>
 
-<%= link_to 'Back', teachers_path %>
+<div class="create-link"><%= link_to 'Back', teachers_path %>
+</div>
 </div>

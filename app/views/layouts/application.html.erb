@@ -27,8 +27,23 @@
       </ul>
     </nav>
     <% end %>
+    <% if teacher_session %>
+    <nav>
+      <h4><%= current_teacher.last_name %>, <%= current_teacher.first_name %></h4>
+      <ul class="admin-nav">
+        <% Teacher.all.each do |teacher| %>
+            <li><%= link_to 'Home', teachers_path %></li>
+            <li><%= link_to 'Profile', current_teacher %></li>
+            <!-- <li><%= link_to 'Teachers', teachers_path %></li>
+            <li><%= link_to 'Students', students_path %></li>
+            <li><%= link_to 'Courses', courses_path %></li>
+            <li><%= link_to 'Cohorts', cohorts_path %></li> -->
+        <% end %>
+      </ul>
+    </nav>
+    <% end %>
 
-  
+
 
     <%= yield %>
   </body>

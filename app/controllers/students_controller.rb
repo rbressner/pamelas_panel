@@ -25,7 +25,7 @@ class StudentsController < ApplicationController
 
   # GET /students/new
   def new
-    @student = current_admin.students.build
+    @student = Student.new
     @admins = Admin.all
     @admin = Admin.find(1)
   end
@@ -37,7 +37,7 @@ class StudentsController < ApplicationController
   # POST /students
   # POST /students.json
   def create
-    @student = current_admin.students.build(student_params)
+    @student = Student.new(student_params)
     @admins = Admin.all
     @admin = Admin.find(1)
 

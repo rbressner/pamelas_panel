@@ -10,28 +10,39 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= form.label :student_id %>
-    <%= form.number_field :student_id %>
+  <div class="edit-form">
+  <div class="edit-section">
+    <div class="item-tag">
+    <%= form.label :student_id %></div>
+    <div class="field"><%= form.number_field :student_id %>
   </div>
+</div>
 
-  <div class="field">
-    <%= form.label :cohort_id %>
-    <%= form.number_field :cohort_id %>
-  </div>
+<div class="edit-section">
+  <div class="item-tag">
+  <%= form.label :cohort_id %></div>
+  <div class="field"><%= form.number_field :cohort_id %>
+</div>
+</div>
 
-  <div class="field">
-    <%= form.label :student_id %>
-    <%= form.text_field :student_id %>
-  </div>
+<div class="edit-section">
+  <div class="item-tag">
+  <%= form.label :student_id %></div>
+  <div class="field"><%= form.text_field :student_id %>
+</div>
+</div>
 
-  <div class="field">
-    <%= form.label :cohort_id %>
-    <%= form.text_field :cohort_id %>
-  </div>
+<div class="edit-section">
+  <div class="item-tag">
+  <%= form.label :cohort_id %></div>
+  <div class="field"><%= form.text_field :cohort_id %>
+</div>
+</div>
 
+  <div class="edit-section">
   <div class="actions">
     <%= form.submit %>
   </div>
+</div>
+</div>
 <% end %>
