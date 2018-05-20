@@ -10,7 +10,19 @@
  color: white;
  font-family: $varela;
  height: 1000px;
+  %alerts {
+   color: #6441a4;
+   font-family: $nunito;
+   font-size: 150%;
  }
+ .notice {
+   @extend %alerts;
+ }
+ .alert {
+   @extend %alerts;
+ }
+ }
+
  a {
    color: white;
  }
