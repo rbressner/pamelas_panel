@@ -11,47 +11,78 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :username %>
-    <%= form.text_field :username %>
+<div class="content">
+    <div class="edit-form">
+    <div class="edit-section">
+      <div class="item-tag">
+      <%= form.label :username %></div>
+      <div class="field"><%= form.text_field :username %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :first_name %>
-    <%= form.text_field :first_name %>
+    <div class="edit-section">
+      <div class="item-tag">
+      <%= form.label :first_name %></div>
+      <div class="field"><%= form.text_field :first_name %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :last_name %>
-    <%= form.text_field :last_name %>
+    <div class="edit-section">
+      <div class="item-tag">
+      <%= form.label :last_name %></div>
+      <div class="field"><%= form.text_field :last_name %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :email %>
-    <%= form.text_field :email %>
+    <div class="edit-section">
+      <div class="item-tag">
+      <%= form.label :email %></div>
+      <div class="field"><%= form.email_field :email %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :password %>
-    <%= form.text_field :password %>
+    <div class="edit-section">
+      <div class="item-tag">
+      <%= form.label :password %></div>
+      <div class="field"><%= form.password_field :password %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :age %>
-    <%= form.number_field :age %>
+    <div class="edit-section">
+      <div class="item-tag">
+      <%= form.label :age %></div>
+      <div class="field"><%= form.number_field :age %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :education %>
-    <%= form.text_field :education %>
+    <div class="edit-section">
+      <div class="item-tag">
+      <%= form.label :education %></div>
+      <div class="field">
+        <%= select_tag(:education,
+          options_for_select(
+            [["Select Highest Completed Education...",1],
+            ["High School Graduate",2],
+            ["Some College",3],
+            ["Associates Degree",4],
+            ["Bachelors Degree",5],
+            ["Masters Degree",6],
+            ["Doctoral or Professional Degree",7]])) %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :teacher_id %>
-    <%= form.text_field :teacher_id %>
+  <div class="edit-section">
+    <div class="item-tag"><%= form.label :user_type %></div>
+    <div class="field">
+    <%= select_tag(:user_type,
+      options_for_select([["Student",1]])) %>
   </div>
+  </div>
+
+
 
   <div class="actions">
     <%= form.submit %>
   </div>
+</div>
 <% end %>

@@ -4,5 +4,4 @@ class Student < ApplicationRecord
   validates :password, presence:true
   validates :email, presence:true
   has_many :cohorts
-  belongs_to :teacher
 end

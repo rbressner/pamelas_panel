@@ -5,16 +5,22 @@ class StudentsController < ApplicationController
   # GET /students.json
   def index
     @students = Student.all
+    @admins = Admin.all
+    @admin = Admin.find(1)
   end
 
   # GET /students/1
   # GET /students/1.json
   def show
+    @admins = Admin.all
+    @admin = Admin.find(1)
   end
 
   # GET /students/new
   def new
     @student = Student.new
+    @admins = Admin.all
+    @admin = Admin.find(1)
   end
 
   # GET /students/1/edit
@@ -25,6 +31,8 @@ class StudentsController < ApplicationController
   # POST /students.json
   def create
     @student = Student.new(student_params)
+    @admins = Admin.all
+    @admin = Admin.find(1)
 
     respond_to do |format|
       if @student.save
