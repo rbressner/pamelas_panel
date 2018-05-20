@@ -28,16 +28,8 @@
 </div>
 <% end %>
 
-<% if new_admin_session? %>
-<div class="create-link"><%= render "admin/shared/links" %></div>
-<% end %>
 
-<% if new_teacher_session? %>
-<div class="create-link"><%= render "teacher/shared/links" %></div>
-<% end %>
+<div class="create-link"><%= render "devise/shared/links" %></div>
 
-<% if new_student_session? %>
-<div class="create-link"><%= render "student/shared/links" %></div>
-<% end %>
 
 </div>

@@ -1,33 +1,41 @@
-<p id="notice"><%= notice %></p>
+<div class="content">
+  <p id="notice"><%= notice %></p>
 
-<h1>Student Cohorts</h1>
+  <h1>Student Cohorts</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Student</th>
-      <th>Cohort</th>
-      <th>Student</th>
-      <th>Cohort</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+  <table class="list-all">
+    <thead>
+      <tr>
+        <th>Student</th>
+        <th>Cohort</th>
+        <th>Student</th>
+        <th>Cohort</th>
+        <th>View</th>
+        <th>Edit</th>
+        <th>Delete</th>
+      </tr>
+    </thead>
 
-  <tbody>
-    <% @student_cohorts.each do |student_cohort| %>
+    <tbody>
+      <% @student_cohorts.each do |student_cohort| %>
       <tr>
         <td><%= student_cohort.student_id %></td>
         <td><%= student_cohort.cohort_id %></td>
         <td><%= student_cohort.student %></td>
         <td><%= student_cohort.cohort %></td>
-        <td><%= link_to 'Show', student_cohort %></td>
-        <td><%= link_to 'Edit', edit_student_cohort_path(student_cohort) %></td>
-        <td><%= link_to 'Destroy', student_cohort, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+        <td><%= link_to student do %><%= image_tag('view.png') %>
+          <% end %></td>
+          <td><%= link_to edit_student_path(student) do %><%= image_tag('edit.png') %>
+            <% end %></td>
+            <td><%= link_to student, method: :delete, data: { confirm: 'Are you sure?' } do %><%= image_tag('rubbish-bin.png') %>
+              <% end %></td>
+            </tr>
+            <% end %>
+          </tbody>
+        </table>
 
-<br>
+        <br>
 
-<%= link_to 'New Student Cohort', new_student_cohort_path %>
+        <div class="create-link"><%= link_to 'New Student Cohort', new_student_cohort_path %>
+        </div>
+      </div>

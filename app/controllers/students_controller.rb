@@ -1,8 +1,6 @@
 class StudentsController < ApplicationController
   before_action :set_student, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_admin!
-  before_action :authenticate_teacher!
-  before_action :authenticate_student!
+
 
 
   def full_name

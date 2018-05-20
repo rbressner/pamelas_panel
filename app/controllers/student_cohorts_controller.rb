@@ -1,8 +1,6 @@
 class StudentCohortsController < ApplicationController
   before_action :set_student_cohort, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_admin!
-  before_action :authenticate_teacher!
-  before_action :authenticate_student!
+
 
   # GET /student_cohorts
   # GET /student_cohorts.json

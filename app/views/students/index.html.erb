@@ -1,39 +1,24 @@
-
-<nav>
-  <h4><%= @admin.last_name %>, <%= @admin.first_name %></h4>
-  <ul class="admin-nav">
-    <% @admins.each do |admin| %>
-        <li><%= link_to 'Home', admins_path %></li>
-        <li><%= link_to 'Profile', @admin %></li>
-        <li><%= link_to 'Teachers', teachers_path %></li>
-        <li><%= link_to 'Students', students_path %></li>
-        <li><%= link_to 'Courses', courses_path %></li>
-        <li><%= link_to 'Cohorts', cohorts_path %></li>
-    <% end %>
-  </ul>
-</nav>
-
 <div class="content">
-<p id="notice"><%= notice %></p>
-<h1>Students</h1>
-<h2>Total Number of Students: <%= @students.count %></h2>
-<table class="list-all">
-  <thead>
-    <tr>
-      <th>Username</th>
-      <th>First name</th>
-      <th>Last name</th>
-      <th>Email</th>
-      <th>Age</th>
-      <th>Education</th>
-      <th>View</th>
-      <th>Edit</th>
-      <th>Delete</th>
-    </tr>
-  </thead>
+  <p id="notice"><%= notice %></p>
+  <h1>Students</h1>
+  <h2>Total Number of Students: <%= @students.count %></h2>
+  <table class="list-all">
+    <thead>
+      <tr>
+        <th>Username</th>
+        <th>First name</th>
+        <th>Last name</th>
+        <th>Email</th>
+        <th>Age</th>
+        <th>Education</th>
+        <th>View</th>
+        <th>Edit</th>
+        <th>Delete</th>
+      </tr>
+    </thead>
 
-  <tbody>
-    <% @students.each do |student| %>
+    <tbody>
+      <% @students.each do |student| %>
       <tr>
         <td><%= student.username %></td>
         <td><%= student.first_name %></td>
@@ -42,18 +27,18 @@
         <td><%= student.age %></td>
         <td><%= student.education %></td>
         <td><%= link_to student do %><%= image_tag('view.png') %>
-<% end %></td>
-<td><%= link_to edit_student_path(student) do %><%= image_tag('edit.png') %>
-<% end %></td>
-<td><%= link_to student, method: :delete, data: { confirm: 'Are you sure?' } do %><%= image_tag('rubbish-bin.png') %>
-<% end %></td>
+          <% end %></td>
+          <td><%= link_to edit_student_path(student) do %><%= image_tag('edit.png') %>
+            <% end %></td>
+            <td><%= link_to student, method: :delete, data: { confirm: 'Are you sure?' } do %><%= image_tag('rubbish-bin.png') %>
+              <% end %></td>
 
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+            </tr>
+            <% end %>
+          </tbody>
+        </table>
 
-<br>
+        <br>
 
-<div class="create-link"><%= link_to 'New Student', new_student_path %></div>
-</div>
+        <div class="create-link"><%= link_to 'New Student', new_student_path %></div>
+      </div>

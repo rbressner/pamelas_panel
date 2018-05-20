@@ -1,8 +1,6 @@
 class CoursesController < ApplicationController
   before_action :set_course, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_admin!
-  before_action :authenticate_teacher!
-  before_action :authenticate_student!
+
 
   # GET /courses
   # GET /courses.json
@@ -21,7 +19,7 @@ class CoursesController < ApplicationController
 
   # GET /courses/new
   def new
-    @course = current_admin.courses.build
+    @course = Course.new
     @admins = Admin.all
     @admin = Admin.find(1)
 
@@ -36,7 +34,7 @@ class CoursesController < ApplicationController
   # POST /courses
   # POST /courses.json
   def create
-    @course = current_admin.courses.build(course_params)
+    @course = Course.new(course_params)
     @admins = Admin.all
     @admin = Admin.find(1)
 

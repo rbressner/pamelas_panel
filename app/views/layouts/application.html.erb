@@ -12,8 +12,23 @@
   </head>
 
   <body>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+    <% if admin_session %>
+    <nav>
+      <h4><%= current_admin.last_name %>, <%= current_admin.first_name %></h4>
+      <ul class="admin-nav">
+        <% Admin.all.each do |admin| %>
+            <li><%= link_to 'Home', admins_path %></li>
+            <li><%= link_to 'Profile', current_admin %></li>
+            <li><%= link_to 'Teachers', teachers_path %></li>
+            <li><%= link_to 'Students', students_path %></li>
+            <li><%= link_to 'Courses', courses_path %></li>
+            <li><%= link_to 'Cohorts', cohorts_path %></li>
+        <% end %>
+      </ul>
+    </nav>
+    <% end %>
+
+  
 
     <%= yield %>
   </body>
