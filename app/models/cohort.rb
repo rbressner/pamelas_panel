@@ -3,8 +3,7 @@ class Cohort < ApplicationRecord
   validates :start_date, presence:true
   validates :end_date, presence:true
   belongs_to :course
-  belongs_to :teacher
-  belongs_to :student
-
+  has_many :teachers, through: :teacher_cohorts
+  has_many :students, through: :student_cohorts
 
 end

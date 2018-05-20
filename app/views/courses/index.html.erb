@@ -17,12 +17,15 @@
 <div class="content">
 <p id="notice"><%= notice %></p>
 <h1>Courses</h1>
-
+<h2>Total Number of Courses: <%= @courses.count %></h2>
 <table class="list-all">
   <thead>
     <tr>
       <th>Name</th>
       <th>Total hours</th>
+      <th>View</th>
+      <th>Edit</th>
+      <th>Delete</th>
     </tr>
   </thead>
 
@@ -31,10 +34,13 @@
       <tr>
         <td><%= course.name %></td>
         <td><%= course.total_hours %></td>
-        <td><%= link_to 'Show', course %></td>
-        <td><%= link_to 'Edit', edit_course_path(course) %></td>
-        <td><%= link_to 'Destroy', course, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+        <td><%= link_to course do %><%= image_tag('view.png') %>
+<% end %></td>
+<td><%= link_to edit_course_path(course) do %><%= image_tag('edit.png') %>
+<% end %></td>
+<td><%= link_to course, method: :delete, data: { confirm: 'Are you sure?' } do %><%= image_tag('rubbish-bin.png') %>
+<% end %></td>
+</tr>
     <% end %>
   </tbody>
 </table>

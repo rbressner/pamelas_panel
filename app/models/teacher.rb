@@ -8,5 +8,5 @@ class Teacher < ApplicationRecord
   validates :email, presence:true
   validates :age, numericality:true
   validates :education, presence:true
-  has_many :cohorts
+  has_many :cohorts, through: :cohorts
 end
