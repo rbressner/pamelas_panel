@@ -37,6 +37,8 @@ nav {
   height: 100%;
   h4 {
     padding-left: 5%;
+    font-size: 160%;
+    color: #b19dd8;
   }
   ul {
       padding-left: 0;
@@ -110,16 +112,43 @@ nav {
   border: 2px solid #2c2541;
   background: #281b2f;
   width: 100%;
-  p {
-    font-size: 130%;
-    padding: 10px;
-  }
-  hr {
+  .edit-section {
     border: 1px solid #2c2541;
+    padding: 20px;
   }
-  strong {
+  .item-tag {
     text-decoration: underline;
     color: #b19dd8;
     font-family: $nunito;
+    font-size: 130%;
+    float: left;
+  }
+  .field {
+    margin-left: 15%;
+  }
+  input[type=text]:focus, input[type=password]:focus {
+    border: 2px solid #7d5bbe;
+  }
+  input[type=text], input[type=password] {
+    text-align: center;
+    border: 1px solid #392e5c;
+    width: 40%;
+    height: 25px;
+    background: #0e0c13;
+    color: white;
+  }
+  input[type=submit] {
+    margin-left: 15%;
+    text-align: center;
+    border: 1px solid #392e5c;
+    width: 20%;
+    height: 25px;
+    background: #0e0c13;
+    color: white;
+  }
+  input[type=submit]:hover {
+    cursor: pointer;
+    color: white;
+    background: #6441a4;
   }
 }

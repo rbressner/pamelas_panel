@@ -24,6 +24,9 @@ font-family: $varela;
       background: #281b2f;
       color: #b47bcf;
     }
+    input[type=text]:focus, input[type=password]:focus {
+      border: 2px solid #7d5bbe;
+    }
     input[type=text], input[type=password], select {
       width: 25%;
       height: 25px;

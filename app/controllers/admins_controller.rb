@@ -5,7 +5,7 @@ class AdminsController < ApplicationController
   # GET /admins.json
   def index
     @admins = Admin.all
-    @admin = Admin.find(params[:id])
+    @admin = Admin.find(1)
   end
 
   # GET /admins/1
