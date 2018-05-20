@@ -9,35 +9,47 @@ font-family: $varela;
 .sign-in {
   width: 100%;
   text-align: center;
-  form {
-    select:hover {
-      cursor: pointer;
-    }
-    input[type=submit]:hover {
-      cursor: pointer;
-    }
-    input[type=submit] {
-      width: 5%;
-      height: 30px;
-      text-align: center;
-      border: 1px solid #dad8de;
-      background: #281b2f;
-      color: #b47bcf;
-    }
-    input[type=text]:focus, input[type=password]:focus {
-      border: 2px solid #7d5bbe;
-    }
-    input[type=text], input[type=password], select {
-      width: 25%;
-      height: 25px;
-      text-align: center;
-      border: 1px solid #dad8de;
-      background: #281b2f;
-      color: #b47bcf;
-    }
-    p {
+  .manage-boxes {
+    margin-top: 5%;
+  }
+    h1 {
       font-family: $nunito;
       color: #b47bcf;
-    }
+
   }
 }
+
+
+
+// 
+//
+//
+// #notice {
+//   color: #6441a4;
+// }
+//
+// #error_explanation {
+//   border: 2px solid red;
+//   padding: 7px 7px 0;
+//   margin-bottom: 20px;
+//   background-color: none;
+//
+//   h2 {
+//     text-align: left;
+//     font-weight: bold;
+//     padding: 5px 5px 5px 15px;
+//     font-size: 12px;
+//     margin: -7px -7px 0;
+//     background-color: #c00;
+//     color: #fff;
+//   }
+//
+//   ul li {
+//     font-size: 12px;
+//     list-style: none;
+//   }
+// }
+//
+// label {
+//   display: block;
+// }

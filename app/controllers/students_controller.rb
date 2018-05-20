@@ -5,7 +5,7 @@ class StudentsController < ApplicationController
   def full_name
     self.first_name + self.last_name
   end
-  
+
   # GET /students
   # GET /students.json
   def index
@@ -19,6 +19,7 @@ class StudentsController < ApplicationController
   def show
     @admins = Admin.all
     @admin = Admin.find(1)
+
   end
 
   # GET /students/new

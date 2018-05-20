@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  teacher_id: 1
+  cohort_id: 1
+  teacher: one
+  cohort: one
+
+two:
+  teacher_id: 1
+  cohort_id: 1
+  teacher: two
+  cohort: two

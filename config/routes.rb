@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :teacher_cohorts
+  resources :student_cohorts
   devise_for :students
   devise_for :teachers
   devise_for :admins

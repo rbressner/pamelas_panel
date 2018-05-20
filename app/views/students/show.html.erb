@@ -1,6 +1,7 @@
 
 <nav>
   <h4><%= @admin.last_name %>, <%= @admin.first_name %></h4>
+
   <ul class="admin-nav">
     <% @admins.each do |admin| %>
         <li><%= link_to 'Home', admins_path %></li>
