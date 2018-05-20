@@ -1,15 +1,25 @@
 <div class="sign-in">
-<h1>Welcome!</h1>
-<h2>Please Select A User Type To Sign In</h2>
+  <ul class="animated-words">
+  <% @words.each do |word| %>
 
-  <h1>User Type:</h1>
+        <li><%= word %></li>
+        <li><%= word %></li>
+        <li><%= word %></li>
+        <li><%= word %></li>
+        <li><%= word %></li>
+        <li><%= word %></li>
+      </ul>
+      <% end %>
+  <div class="logo"><%=image_tag("logo.png")%></div>
+  <h1 class="welcome">Welcome!</h1>
+  <h2>Please Select A User Type To Sign In:</h2>
 
   <div class="manage-boxes">
 
-  <h4><%= link_to 'Admin', new_admin_session_path %></h4>
-  <h4><%= link_to 'Teacher', new_teacher_session_path %></h4>
-  <br>
-  <h4><%= link_to 'Student', new_student_session_path %></h4>
+    <h4><%= link_to 'Admin', new_admin_session_path %></h4>
+    <h4><%= link_to 'Teacher', new_teacher_session_path %></h4>
+    <br>
+    <h4><%= link_to 'Student', new_student_session_path %></h4>
   </div>
 
 </form>
