@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_05_20_042226) do
+ActiveRecord::Schema.define(version: 2018_05_20_052422) do
 
   create_table "admins", force: :cascade do |t|
     t.string "username"
@@ -51,10 +51,10 @@ ActiveRecord::Schema.define(version: 2018_05_20_042226) do
     t.string "email"
     t.string "password"
     t.integer "age"
-    t.string "education"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "user_type"
+    t.text "education"
   end
 
   create_table "teachers", force: :cascade do |t|
@@ -65,10 +65,10 @@ ActiveRecord::Schema.define(version: 2018_05_20_042226) do
     t.string "password"
     t.integer "age"
     t.integer "salary"
-    t.string "education"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "user_type"
+    t.text "education"
   end
 
 end

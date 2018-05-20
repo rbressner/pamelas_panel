@@ -1,4 +1,4 @@
-<p id="notice"><%= notice %></p>
+
 <nav>
   <h4><%= @admin.last_name %>, <%= @admin.first_name %></h4>
   <ul class="admin-nav">
@@ -12,7 +12,9 @@
     <% end %>
   </ul>
 </nav>
+
 <div class="content">
+<p id="notice"><%= notice %></p>
 <p>
   <strong>Username:</strong>
   <%= @student.username %>
@@ -48,10 +50,6 @@
   <%= @student.education %>
 </p>
 
-<p>
-  <strong>Teacher:</strong>
-  <%= @student.teacher %>
-</p>
 
 <%= link_to 'Edit', edit_student_path(@student) %> |
 <%= link_to 'Back', students_path %>

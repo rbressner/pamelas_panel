@@ -1,49 +1,64 @@
+<nav>
+  <h4><%= @admin.last_name %>, <%= @admin.first_name %></h4>
+  <ul class="admin-nav">
+    <% @admins.each do |admin| %>
+        <li><%= link_to 'Home', admins_path %></li>
+        <li><%= link_to 'Profile', @admin %></li>
+        <li><%= link_to 'Teachers', teachers_path %></li>
+        <li><%= link_to 'Students', students_path %></li>
+        <li><%= link_to 'Courses', courses_path %></li>
+        <li><%= link_to 'Cohorts', cohorts_path %></li>
+    <% end %>
+  </ul>
+</nav>
+
+<div class="content">
 <p id="notice"><%= notice %></p>
 
+<h1><%= @teacher.last_name %>, <%= @teacher.first_name %></h1>
+
+<div class="profile">
 <p>
   <strong>Username:</strong>
   <%= @teacher.username %>
 </p>
-
+<hr>
 <p>
   <strong>First name:</strong>
   <%= @teacher.first_name %>
 </p>
-
+<hr>
 <p>
   <strong>Last name:</strong>
   <%= @teacher.last_name %>
 </p>
-
+<hr>
 <p>
   <strong>Email:</strong>
   <%= @teacher.email %>
 </p>
-
+<hr>
 <p>
   <strong>Password:</strong>
   <%= @teacher.password %>
 </p>
-
+<hr>
 <p>
   <strong>Age:</strong>
   <%= @teacher.age %>
 </p>
-
+<hr>
 <p>
   <strong>Salary:</strong>
   <%= @teacher.salary %>
 </p>
-
+<hr>
 <p>
   <strong>Education:</strong>
   <%= @teacher.education %>
 </p>
-
-<p>
-  <strong>Admin:</strong>
-  <%= @teacher.admin %>
-</p>
+</div>
 
 <%= link_to 'Edit', edit_teacher_path(@teacher) %> |
 <%= link_to 'Back', teachers_path %>
+</div>

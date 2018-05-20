@@ -11,17 +11,25 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
-  </div>
 
-  <div class="field">
-    <%= form.label :total_hours %>
-    <%= form.number_field :total_hours %>
+  <div class="edit-form">
+  <div class="edit-section">
+    <div class="item-tag">
+    <%= form.label :name %></div>
+    <div class="field"><%= form.text_field :name %>
   </div>
+</div>
+
+  <div class="edit-section">
+    <div class="item-tag">
+    <%= form.label :total_hours %></div>
+    <div class="field"><%= form.number_field :total_hours %>
+  </div>
+</div>
+
 
   <div class="actions">
     <%= form.submit %>
+  </div>
   </div>
 <% end %>

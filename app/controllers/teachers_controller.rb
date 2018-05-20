@@ -12,6 +12,8 @@ class TeachersController < ApplicationController
   # GET /teachers/1
   # GET /teachers/1.json
   def show
+    @admins = Admin.all
+    @admin = Admin.find(1)
   end
 
   # GET /teachers/new

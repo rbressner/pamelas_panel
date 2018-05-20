@@ -166,7 +166,9 @@ td, th {
     padding-top: 1.5%;
     padding-bottom: 1.5%;
     border-right: 1px solid #392e5c;
+    border-bottom: 1px solid #392e5c;
 }
+
 th:nth-last-child(1), td:nth-last-child(1) {
   border-right: none;
 }
