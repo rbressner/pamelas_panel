@@ -41,9 +41,13 @@
         <td><%= student.email %></td>
         <td><%= student.age %></td>
         <td><%= student.education %></td>
-        <td><%= link_to 'Show', student %></td>
-        <td><%= link_to 'Edit', edit_student_path(student) %></td>
-        <td><%= link_to 'Destroy', student, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to student do %><%= image_tag('view.png') %>
+<% end %></td>
+<td><%= link_to edit_student_path(student) do %><%= image_tag('view.png') %>
+<% end %></td>
+<td><%= link_to student, method: :delete, data: { confirm: 'Are you sure?' } do %><%= image_tag('view.png') %>
+<% end %></td>
+
       </tr>
     <% end %>
   </tbody>

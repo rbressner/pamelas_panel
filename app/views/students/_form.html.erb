@@ -59,15 +59,16 @@
       <div class="item-tag">
       <%= form.label :education %></div>
       <div class="field">
+        <!-- <%= form.text_field :education %> -->
         <%= select_tag(:education,
           options_for_select(
-            [["Select Highest Completed Education...",1],
-            ["High School Graduate",2],
-            ["Some College",3],
-            ["Associates Degree",4],
-            ["Bachelors Degree",5],
-            ["Masters Degree",6],
-            ["Doctoral or Professional Degree",7]])) %>
+            ["Select One...",
+            "High School Graduate",
+            "Some College",
+            "Associates Degree",
+            "Bachelors Degree",
+            "Masters Degree",
+            "Doctoral or Professional Degree"], :disabled => ["Select One..."])) %>
     </div>
   </div>
 
@@ -75,7 +76,7 @@
     <div class="item-tag"><%= form.label :user_type %></div>
     <div class="field">
     <%= select_tag(:user_type,
-      options_for_select([["Student",1]])) %>
+      options_for_select([["Student"]])) %>
   </div>
   </div>
 

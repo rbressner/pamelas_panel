@@ -3,5 +3,6 @@ class Teacher < ApplicationRecord
   validates :password, presence:true
   validates :email, presence:true
   validates :age, numericality:true
+  validates :education, presence:true
   has_many :cohorts
 end

@@ -168,7 +168,6 @@ td, th {
     border-right: 1px solid #392e5c;
     border-bottom: 1px solid #392e5c;
 }
-
 th:nth-last-child(1), td:nth-last-child(1) {
   border-right: none;
 }
@@ -177,8 +176,9 @@ th {
 }
 td {
   font-size: 130;
+  border-bottom: none;
 }
 tr:nth-child(even) {
-    background-color: #dddddd;
+    background-color: #281b2f;
 }
 }

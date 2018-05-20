@@ -15,36 +15,38 @@
 
 <div class="content">
 <p id="notice"><%= notice %></p>
+<h1><%= @student.last_name %>, <%= @student.first_name %></h1>
+<div class="profile">
 <p>
   <strong>Username:</strong>
   <%= @student.username %>
 </p>
-
+<hr>
 <p>
   <strong>First name:</strong>
   <%= @student.first_name %>
 </p>
-
+<hr>
 <p>
   <strong>Last name:</strong>
   <%= @student.last_name %>
 </p>
-
+<hr>
 <p>
   <strong>Email:</strong>
   <%= @student.email %>
 </p>
-
+<hr>
 <p>
   <strong>Password:</strong>
   <%= @student.password %>
 </p>
-
+<hr>
 <p>
   <strong>Age:</strong>
   <%= @student.age %>
 </p>
-
+<hr>
 <p>
   <strong>Education:</strong>
   <%= @student.education %>
