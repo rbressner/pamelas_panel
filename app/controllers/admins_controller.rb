@@ -8,6 +8,9 @@ class AdminsController < ApplicationController
     @admin = Admin.find(1)
   end
 
+  def teachers_all
+    @teachers = Teacher.all
+  end
   # GET /admins/1
   # GET /admins/1.json
   def show
