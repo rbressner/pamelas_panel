@@ -18,10 +18,10 @@ class CoursesController < ApplicationController
 
   # GET /courses/new
   def new
-    @course = Course.new
+    @course = current_admin.courses.build
     @admins = Admin.all
     @admin = Admin.find(1)
-    
+
   end
 
   # GET /courses/1/edit
@@ -33,7 +33,7 @@ class CoursesController < ApplicationController
   # POST /courses
   # POST /courses.json
   def create
-    @course = Course.new(course_params)
+    @course = current_admin.courses.build(course_params)
     @admins = Admin.all
     @admin = Admin.find(1)
 

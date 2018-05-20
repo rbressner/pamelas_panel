@@ -2,9 +2,9 @@ $poppins: 'Poppins', sans-serif;
 $nunito: 'Nunito Sans', sans-serif;
 $varela: 'Varela Round', sans-serif;
 body {
-background-color: #17141f;
-color: white;
-font-family: $varela;
+  background-color: #17141f;
+  color: white;
+  font-family: $varela;
 }
 .sign-in {
   width: 100%;
@@ -12,15 +12,16 @@ font-family: $varela;
   .manage-boxes {
     margin-top: 5%;
   }
-    h1 {
-      font-family: $nunito;
-      color: #b47bcf;
+  h1 {
+    font-family: $nunito;
+    color: #b47bcf;
 
   }
 }
 .logo {
   img {
     width: 25%;
+    margin-left: 10%;
     margin-bottom: -5%;
   }
 }
@@ -28,7 +29,7 @@ font-family: $varela;
   font-size: 250%;
 }
 .text-wrapper {
-    text-align: center;
+  text-align: center;
 }
 
 $one: #6b969d;
@@ -38,12 +39,15 @@ $four: #7a6b9d;
 $five: #8d6b9d;
 $six: #9b6b9d;
 .animated-words {
-    float: left;
-    padding-left: 10%;
-    margin-top: 10%;
-    display: inline-block;
-    li {
-      list-style-type: none;
+  float: left;
+  padding-left: 10%;
+  margin-top: 10%;
+  display: inline-block;
+  @extend %words;
+}
+%words {
+  span {
+    font-size: 200%;
     position: absolute;
     opacity: 0;
     overflow: hidden;
@@ -51,41 +55,39 @@ $six: #9b6b9d;
     -webkit-animation: animateWord 18s linear infinite 0s;
     -ms-animation: animateWord 18s linear infinite 0s;
     animation: animateWord 18s linear infinite 0s;
-    }
-}
-
-.animated-words li:nth-child(2) {
+  }
+  span:nth-child(2) {
     -webkit-animation-delay: 3s;
     -ms-animation-delay: 3s;
     animation-delay: 3s;
     color: $two;
-}
-.animated-words li:nth-child(3) {
+  }
+  span:nth-child(3) {
     -webkit-animation-delay: 6s;
     -ms-animation-delay: 6s;
     animation-delay: 6s;
     color: $three;
-}
-.animated-words li:nth-child(4) {
+  }
+  span:nth-child(4) {
     -webkit-animation-delay: 9s;
     -ms-animation-delay: 9s;
     animation-delay: 9s;
     color: $four;
-}
-.animated-words li:nth-child(5) {
+  }
+  span:nth-child(5) {
     -webkit-animation-delay: 12s;
     -ms-animation-delay: 12s;
     animation-delay: 12s;
     color: $five;
-}
-.animated-words li:nth-child(6) {
+  }
+  span:nth-child(6) {
     -webkit-animation-delay: 15s;
     -ms-animation-delay: 15s;
     animation-delay: 15s;
     color: $six;
-}
+  }
 
-@-webkit-keyframes animateWord {
+  @-webkit-keyframes animateWord {
     0% { opacity: 0; }
     2% { opacity: 0; -webkit-transform: translateY(-30px); }
     5% { opacity: 1; -webkit-transform: translateY(0px);}
@@ -93,14 +95,13 @@ $six: #9b6b9d;
     20% { opacity: 0; -webkit-transform: translateY(30px); }
     80% { opacity: 0; }
     100% { opacity: 0; }
+  }
 }
-// .animated-words-left {
-//       float: left;
-//       padding-left: 10%;
-//       @extend %animated-words;
-// }
-// .animated-words-right {
-//     float: right;
-//     padding-right: 10%;
-//     @extend %animated-words;
-// }
+.animated-words-right {
+  float: right;
+  margin-right: 20%;
+  margin-top: 10%;
+  display: inline-block;
+  @extend %words;
+}
+// Source: http://www.competa.com/blog/changing-words-with-css-animation/

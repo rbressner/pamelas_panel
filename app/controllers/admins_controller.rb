@@ -5,7 +5,7 @@ class AdminsController < ApplicationController
   def full_name
     self.first_name + self.last_name
   end
-  
+
   # GET /admins
   # GET /admins.json
   def index
@@ -13,9 +13,7 @@ class AdminsController < ApplicationController
     @admin = Admin.find(1)
   end
 
-  def teachers_all
-    @teachers = Teacher.all
-  end
+
   # GET /admins/1
   # GET /admins/1.json
   def show
@@ -23,9 +21,6 @@ class AdminsController < ApplicationController
     @admin = Admin.find(params[:id])
   end
 
-  def full_name
-
-  end
   # GET /admins/new
   def new
     @admin = Admin.new
