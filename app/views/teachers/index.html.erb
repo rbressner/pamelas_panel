@@ -15,7 +15,10 @@
 <div class="content">
 <h1>Teachers</h1>
 
+
+
 <table class="list-all">
+
   <thead>
     <tr>
       <th>Username</th>
@@ -45,7 +48,7 @@
       <% end %></td>
       <td><%= link_to edit_teacher_path(teacher) do %><%= image_tag('edit.png') %>
       <% end %></td>
-      <td><%= link_to teacher, method: :delete, data: { confirm: 'Are you sure?' } do %><%= image_tag('garbage.png') %>
+      <td><%= link_to teacher, method: :delete, data: { confirm: 'Are you sure?' } do %><%= image_tag('rubbish-bin.png') %>
       <% end %></td>
       </tr>
     <% end %>
@@ -54,5 +57,5 @@
 
 <br>
 
-<%= link_to 'New Teacher', new_teacher_path %>
+<div class="create-link"><%= link_to 'New Teacher', new_teacher_path %></div>
 </div>

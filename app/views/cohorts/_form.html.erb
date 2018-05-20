@@ -11,37 +11,75 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
+  <div class="edit-form">
+  <div class="edit-section">
+    <div class="item-tag">
+    <%= form.label :name %></div>
+    <div class="field"><%= form.text_field :name %>
   </div>
+</div>
 
-  <div class="field">
-    <%= form.label :start_date %>
-    <%= form.datetime_select :start_date %>
-  </div>
 
-  <div class="field">
-    <%= form.label :end_date %>
-    <%= form.datetime_select :end_date %>
-  </div>
+<div class="edit-section">
+  <div class="item-tag">
+  <%= form.label :start_date %></div>
+  <div class="field"><span class="date"><%= form.date_select :start_date %></span>
+</div>
+</div>
 
+
+<div class="edit-section">
+  <div class="item-tag">
+  <%= form.label :end_date %></div>
+  <div class="field"><span class="date"><%= form.date_select :end_date %></span>
+</div>
+</div>
+
+<div class="edit-section">
+  <div class="item-tag">
+  <%= form.label :class_hours %></div>
+  <div class="field"><span class="date"><%= form.time_select :class_hours, :ignore_date => true %></span> -
+    <span class="date"><%= form.time_select :class_hours, :ignore_date => true %></span>
+</div>
+</div>
+
+
+<div class="edit-section">
+  <div class="item-tag">
+  <%= form.label :course_id %></div>
   <div class="field">
-    <%= form.label :course_id %>
     <%= form.text_field :course_id %>
-  </div>
+</div>
+</div>
 
-  <div class="field">
-    <%= form.label :teacher_id %>
-    <%= form.text_field :teacher_id %>
-  </div>
+<div class="edit-section">
+  <div class="item-tag">
+  <!-- <%= form.label :teacher_id %></div> -->
+  <!-- <div class="field"> -->
+    <!-- <%= form.text_field :teacher_id %> -->
 
-  <div class="field">
-    <%= form.label :student_id %>
-    <%= form.text_field :student_id %>
-  </div>
+  <%= form.label :teacher_id, "Teacher" %></div>
+  <div class="field"><%= form.text_field :teacher_id, list: 'Teachers' %>
+  <datalist>
+    <% Teacher.all.each do |teacher| %>
+      <option value="<%= teacher.first_name %>"></option>
+
+<% end %>
+  </datalist>
+
+</div>
+</div>
+
+<!-- <div class="edit-section">
+  <div class="item-tag">
+  <%= form.label :student_id %></div>
+  <div class="field"><%= form.text_field :student_id %>
+</div>
+</div> -->
+
 
   <div class="actions">
     <%= form.submit %>
   </div>
+</div>
 <% end %>

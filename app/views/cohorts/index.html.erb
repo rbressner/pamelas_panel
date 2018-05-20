@@ -1,8 +1,23 @@
+<nav>
+  <h4><%= @admin.last_name %>, <%= @admin.first_name %></h4>
+  <ul class="admin-nav">
+    <% @admins.each do |admin| %>
+        <li><%= link_to 'Home', admins_path %></li>
+        <li><%= link_to 'Profile', @admin %></li>
+        <li><%= link_to 'Teachers', teachers_path %></li>
+        <li><%= link_to 'Students', students_path %></li>
+        <li><%= link_to 'Courses', courses_path %></li>
+        <li><%= link_to 'Cohorts', cohorts_path %></li>
+    <% end %>
+  </ul>
+</nav>
+
+<div class="content">
 <p id="notice"><%= notice %></p>
 
 <h1>Cohorts</h1>
 
-<table>
+<table class="list-all">
   <thead>
     <tr>
       <th>Name</th>
@@ -10,8 +25,10 @@
       <th>End date</th>
       <th>Course</th>
       <th>Teacher</th>
-      <th>Student</th>
-      <th colspan="3"></th>
+      <th>Students</th>
+      <th>View</th>
+      <th>Edit</th>
+      <th>Delete</th>
     </tr>
   </thead>
 
@@ -24,14 +41,17 @@
         <td><%= cohort.course %></td>
         <td><%= cohort.teacher %></td>
         <td><%= cohort.student %></td>
-        <td><%= link_to 'Show', cohort %></td>
-        <td><%= link_to 'Edit', edit_cohort_path(cohort) %></td>
-        <td><%= link_to 'Destroy', cohort, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+        <td><%= link_to teacher do %><%= image_tag('view.png') %>
+      <% end %></td>
+      <td><%= link_to edit_teacher_path(teacher) do %><%= image_tag('edit.png') %>
+      <% end %></td>
+      <td><%= link_to teacher, method: :delete, data: { confirm: 'Are you sure?' } do %><%= image_tag('rubbish-bin.png') %>
+      <% end %></td>      </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
 
-<%= link_to 'New Cohort', new_cohort_path %>
+<div class="create-link"><%= link_to 'New Cohort', new_cohort_path %></div>
+</div>

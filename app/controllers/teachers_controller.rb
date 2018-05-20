@@ -1,6 +1,10 @@
 class TeachersController < ApplicationController
   before_action :set_teacher, only: [:show, :edit, :update, :destroy]
 
+
+  def full_name
+    self.first_name + self.last_name
+  end
   # GET /teachers
   # GET /teachers.json
   def index
@@ -79,4 +83,7 @@ class TeachersController < ApplicationController
     def teacher_params
       params.require(:teacher).permit(:username, :first_name, :last_name, :email, :password, :age, :salary, :education, :admin_id)
     end
+
+
+
 end

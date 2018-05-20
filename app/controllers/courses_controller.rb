@@ -19,6 +19,9 @@ class CoursesController < ApplicationController
   # GET /courses/new
   def new
     @course = Course.new
+    @admins = Admin.all
+    @admin = Admin.find(1)
+    
   end
 
   # GET /courses/1/edit

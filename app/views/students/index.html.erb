@@ -45,7 +45,7 @@
 <% end %></td>
 <td><%= link_to edit_student_path(student) do %><%= image_tag('edit.png') %>
 <% end %></td>
-<td><%= link_to student, method: :delete, data: { confirm: 'Are you sure?' } do %><%= image_tag('garbage.png') %>
+<td><%= link_to student, method: :delete, data: { confirm: 'Are you sure?' } do %><%= image_tag('rubbish-bin.png') %>
 <% end %></td>
 
       </tr>
@@ -55,5 +55,5 @@
 
 <br>
 
-<%= link_to 'New Student', new_student_path %>
+<div class="create-link"><%= link_to 'New Student', new_student_path %></div>
 </div>

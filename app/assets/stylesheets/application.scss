@@ -125,6 +125,11 @@ nav {
     font-size: 130%;
     float: left;
   }
+  .date {
+    select {
+      width: 15%;
+  }
+}
   .field {
     margin-left: 15%;
   }
@@ -139,6 +144,7 @@ nav {
     background: #0e0c13;
     color: white;
   }
+
   input[type=submit] {
     margin-left: 15%;
     text-align: center;
@@ -148,6 +154,7 @@ nav {
     background: #0e0c13;
     color: white;
   }
+
   select:hover, option:hover {
     cursor: pointer;
   }
@@ -181,4 +188,10 @@ td {
 tr:nth-child(even) {
     background-color: #281b2f;
 }
+}
+.create-link {
+  a:hover {
+      color: #6441a4;
+  }
+
 }

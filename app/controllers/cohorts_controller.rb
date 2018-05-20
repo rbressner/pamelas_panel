@@ -5,27 +5,41 @@ class CohortsController < ApplicationController
   # GET /cohorts.json
   def index
     @cohorts = Cohort.all
+    @admins = Admin.all
+    @admin = Admin.find(1)
+    @courses = Course.all
+    @teachers = Teacher.all
   end
 
   # GET /cohorts/1
   # GET /cohorts/1.json
   def show
+    @admins = Admin.all
+    @admin = Admin.find(1)
+
   end
 
   # GET /cohorts/new
   def new
     @cohort = Cohort.new
+    @admins = Admin.all
+    @admin = Admin.find(1)
+
   end
 
   # GET /cohorts/1/edit
   def edit
+    @admins = Admin.all
+    @admin = Admin.find(1)
+
   end
 
   # POST /cohorts
   # POST /cohorts.json
   def create
     @cohort = Cohort.new(cohort_params)
-
+    @admins = Admin.all
+    @admin = Admin.find(1)
     respond_to do |format|
       if @cohort.save
         format.html { redirect_to @cohort, notice: 'Cohort was successfully created.' }
