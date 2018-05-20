@@ -41,9 +41,12 @@
         <td><%= teacher.age %></td>
         <td><%= teacher.salary %></td>
         <td><%= teacher.education %></td>
-        <td><%= link_to 'Show', teacher %></td>
-        <td><%= link_to 'Edit', edit_teacher_path(teacher) %></td>
-        <td><%= link_to 'Destroy', teacher, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to teacher do %><%= image_tag('view.png') %>
+      <% end %></td>
+      <td><%= link_to edit_teacher_path(teacher) do %><%= image_tag('edit.png') %>
+      <% end %></td>
+      <td><%= link_to teacher, method: :delete, data: { confirm: 'Are you sure?' } do %><%= image_tag('garbage.png') %>
+      <% end %></td>
       </tr>
     <% end %>
   </tbody>
