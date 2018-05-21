@@ -2,7 +2,28 @@
 
 <div class="content">
   <p id="notice"><%= notice %></p>
-  <h1>Welcome</h1>
+  <div class="sign-in">
+      <div class="animated-words">
+          <span>Action</span>
+          <span>Believe</span>
+          <span>Dare</span>
+          <span>Dream</span>
+          <span>Positivity</span>
+          <span>Smile</span>
+        </div>
+
+          <div class="animated-words-right">
+              <span>Practice</span>
+              <span>Creative</span>
+              <span>Hope</span>
+              <span>Mindfulness</span>
+              <span>Nurture</span>
+              <span>Listen</span>
+            </div>
+    <div class="logo"><%=image_tag("logo.png")%></div>
+
+    <h1 class="welcome">Welcome!</h1>
+    <h2 class="home-action">Please Choose an Action:</h2>
   <div class="manage-boxes">
     <% @admins.each do |admin| %>
     <h4><%= link_to 'Manage Teachers', teachers_path %></h4>

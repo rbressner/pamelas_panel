@@ -1,3 +1,6 @@
+<% if admin_session || teacher_session || student_session %>
+"Oops, please go back home"
+<% else %>
 <div class="sign-in">
     <div class="animated-words">
         <span>Action</span>
@@ -31,3 +34,4 @@
 
 </form>
 </div>
+<% end %>
