@@ -48,24 +48,17 @@
   <div class="item-tag">
   <%= form.label :course_id %></div>
   <div class="field">
-    <%= form.text_field :course_id %>
-</div>
+      <%= form.collection_select :course_id, Course.all, :id, :name, prompt: 'Select a Course'%>
+  </div>
 </div>
 
 <div class="edit-section">
   <div class="item-tag">
-  <%= form.label :teacher_id, "Teacher" %></div>
-  <div class="field"><%= form.text_field :teacher_id, list: 'Teachers' %>
-  <datalist>
-    <% Teacher.all.each do |teacher| %>
-      <option value="<%= teacher.first_name %>"></option>
-
-<% end %>
-  </datalist>
-
+  <%= form.label :teacher_id %></div>
+  <div class="field">
+      <%= form.collection_select :teacher_id, Teacher.all, :id, :name, prompt: 'Select a Teacher'%>
+  </div>
 </div>
-</div>
-
 
 
   <div class="actions">

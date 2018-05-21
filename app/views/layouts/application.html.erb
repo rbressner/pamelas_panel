@@ -23,7 +23,7 @@
             <li><%= link_to 'Students', students_path %></li>
             <li><%= link_to 'Courses', courses_path %></li>
             <li><%= link_to 'Cohorts', cohorts_path %></li>
-            <li><%= link_to 'Sign Out', destroy_admin_session_path %></li>
+            <li><%= link_to 'Sign Out', destroy_admin_session_path, :method => :delete %></li>
         <% end %>
       </ul>
     </nav>

@@ -76,6 +76,14 @@
   </div>
 </div>
 
+<div class="edit-section">
+  <div class="item-tag">
+  <%= form.label :education %></div>
+  <div class="field">
+      <%= form.collection_select :education, Course.all, :id, :name, prompt: 'Select Highest Level of Education'%>
+  </div>
+</div>
+
 
 <div class="edit-section">
   <div class="item-tag"><%= form.label :user_type %></div>

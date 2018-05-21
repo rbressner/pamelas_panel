@@ -1,5 +1,5 @@
 <div class="content">
-
+<div class="create-link"><%= link_to 'Back', cohorts_path %></div>
 <p id="notice"><%= notice %></p>
 
 <div class="profile">
@@ -20,12 +20,12 @@
 
 <p>
   <strong>Course:</strong>
-  <%= @cohort.course %>
+  <%= @cohort.course.name %>
 </p>
 
 <p>
   <strong>Teacher:</strong>
-  <%= @cohort.teacher %>
+  <%= @cohort.teacher.id.name %>
 </p>
 
 <p>
@@ -34,6 +34,8 @@
 </p>
 
 <div class="create-link"><%= link_to 'Edit', edit_cohort_path(@cohort) %></div> |
-<div class="create-link"><%= link_to 'Back', cohorts_path %></div>
+
+
 </div>
+
 </div>

@@ -6,6 +6,7 @@
 <table class="list-all">
   <thead>
     <tr>
+      <th>Cohort ID</th>
       <th>Name</th>
       <th>Start date</th>
       <th>End date</th>
@@ -21,17 +22,18 @@
   <tbody>
     <% @cohorts.each do |cohort| %>
       <tr>
+        <td><%= cohort.id%></td>
         <td><%= cohort.name %></td>
         <td><%= cohort.start_date %></td>
         <td><%= cohort.end_date %></td>
-        <td><%= cohort.course %></td>
-        <td><%= cohort.teacher %></td>
-        <td><%= cohort.student %></td>
-        <td><%= link_to teacher do %><%= image_tag('view.png') %>
+        <td><%= cohort.course.name %></td>
+        <td><%= cohort.id%></td>
+        <td><%= cohort.id%></td>
+        <td><%= link_to cohort do %><%= image_tag('view.png') %>
       <% end %></td>
-      <td><%= link_to edit_teacher_path(teacher) do %><%= image_tag('edit.png') %>
+      <td><%= link_to edit_cohort_path(cohort) do %><%= image_tag('edit.png') %>
       <% end %></td>
-      <td><%= link_to teacher, method: :delete, data: { confirm: 'Are you sure?' } do %><%= image_tag('rubbish-bin.png') %>
+      <td><%= link_to cohort, method: :delete, data: { confirm: 'Are you sure?' } do %><%= image_tag('rubbish-bin.png') %>
       <% end %></td>      </tr>
     <% end %>
   </tbody>

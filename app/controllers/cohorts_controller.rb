@@ -25,6 +25,7 @@ class CohortsController < ApplicationController
     @cohort = Cohort.new
     @admins = Admin.all
     @admin = Admin.find(1)
+    @courses = Course.all
 
   end
 
@@ -33,6 +34,7 @@ class CohortsController < ApplicationController
   def edit
     @admins = Admin.all
     @admin = Admin.find(1)
+    @courses = Course.all
 
   end
 
@@ -40,6 +42,7 @@ class CohortsController < ApplicationController
   # POST /cohorts.json
   def create
     @cohort = Cohort.new(cohort_params)
+    @courses = Course.all
     @admins = Admin.all
     @admin = Admin.find(1)
     respond_to do |format|
