@@ -8,6 +8,7 @@
 
   <thead>
     <tr>
+      <th>Teacher ID</th>
       <th>Username</th>
       <th>First name</th>
       <th>Last name</th>
@@ -24,6 +25,7 @@
   <tbody>
     <% @teachers.each do |teacher| %>
       <tr>
+        <td><%= teacher.id%></td>
         <td><%= teacher.username %></td>
         <td><%= teacher.first_name %></td>
         <td><%= teacher.last_name %></td>

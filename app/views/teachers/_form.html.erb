@@ -62,25 +62,18 @@
   </div>
 </div>
 
-  <div class="edit-section">
-    <div class="item-tag">
-    <%= form.label :education %></div>
-    <div class="field">
-  <input type="radio" name="education" value="High School Graduate"> High School Graduate<br>
-  <input type="radio" name="education" value="Some College">Some College<br>
-  <input type="radio" name="education" value="Associates Degree">Associates Degree<br>
-  <input type="radio" name="education" value="Bachelors Degree">Bachelors Degree<br>
-  <input type="radio" name="education" value="Masters Degree">Masters Degree<br>
-  <input type="radio" name="education" value="Doctoral or Professional Degree">Doctoral or Professional Degree<br>
-
-  </div>
-</div>
 
 <div class="edit-section">
   <div class="item-tag">
   <%= form.label :education %></div>
   <div class="field">
-      <%= form.collection_select :education, Course.all, :id, :name, prompt: 'Select Highest Level of Education'%>
+      <%= form.select :education, [["High School Graduate"],
+      ["Some College"],
+      ["Associates Degree"],
+      ["Bachelors Degree"],
+      ["Masters Degree"],
+      ["Doctoral or Professional Degree"]],
+       prompt: 'Select Highest Level of Education'%>
   </div>
 </div>
 

@@ -56,7 +56,7 @@
   <div class="item-tag">
   <%= form.label :teacher_id %></div>
   <div class="field">
-      <%= form.collection_select :teacher_id, Teacher.all, :id, :name, prompt: 'Select a Teacher'%>
+      <%= form.collection_select :teacher_id, Teacher.all, :id, :first_name, prompt: 'Select a Teacher'%>
   </div>
 </div>
 
