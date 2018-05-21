@@ -11,7 +11,7 @@ class AdminsController < ApplicationController
   # GET /admins.json
   def index
     @admins = Admin.all
-    @admin = Admin.find(1)
+    @admin = Admin.find(current_admin.id)
   end
 
 
@@ -19,7 +19,7 @@ class AdminsController < ApplicationController
   # GET /admins/1.json
   def show
     @admins = Admin.all
-    @admin = Admin.find(params[:id])
+    @admin = Admin.find(current_admin.id)
   end
 
   # GET /admins/new
@@ -30,7 +30,7 @@ class AdminsController < ApplicationController
   # GET /admins/1/edit
   def edit
     @admins = Admin.all
-    @admin = Admin.find(params[:id])
+    @admin = Admin.find(current_admin.id)
   end
 
   # POST /admins
@@ -76,7 +76,7 @@ class AdminsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_admin
-      @admin = Admin.find(params[:id])
+      @admin = Admin.find(current_admin.id)
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

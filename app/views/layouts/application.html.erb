@@ -23,6 +23,7 @@
             <li><%= link_to 'Students', students_path %></li>
             <li><%= link_to 'Courses', courses_path %></li>
             <li><%= link_to 'Cohorts', cohorts_path %></li>
+            <li><%= link_to 'Sign Out', destroy_admin_session_path %></li>
         <% end %>
       </ul>
     </nav>
@@ -34,6 +35,7 @@
         <% Teacher.all.each do |teacher| %>
             <li><%= link_to 'Home', teachers_path %></li>
             <li><%= link_to 'Profile', current_teacher %></li>
+            <li><%= link_to 'Sign Out', destroy_teacher_session %></li>
             <!-- <li><%= link_to 'Teachers', teachers_path %></li>
             <li><%= link_to 'Students', students_path %></li>
             <li><%= link_to 'Courses', courses_path %></li>
@@ -42,7 +44,22 @@
       </ul>
     </nav>
     <% end %>
-
+    <% if student_session %>
+    <nav>
+      <h4><%= current_student.last_name %>, <%= current_student.first_name %></h4>
+      <ul class="admin-nav">
+        <% Teacher.all.each do |teacher| %>
+            <li><%= link_to 'Home', students_path %></li>
+            <li><%= link_to 'Profile', current_student %></li>
+            <li><%= link_to 'Sign Out', destroy_student_session %></li>
+            <!-- <li><%= link_to 'Teachers', teachers_path %></li>
+            <li><%= link_to 'Students', students_path %></li>
+            <li><%= link_to 'Courses', courses_path %></li>
+            <li><%= link_to 'Cohorts', cohorts_path %></li> -->
+        <% end %>
+      </ul>
+    </nav>
+    <% end %>
 
 
     <%= yield %>
