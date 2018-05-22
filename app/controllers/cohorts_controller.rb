@@ -7,7 +7,7 @@ class CohortsController < ApplicationController
   def index
     @cohorts = Cohort.all
     @admins = Admin.all
-    @admin = Admin.find(1)
+    @admin = Admin.find(current_admin.id)
     @courses = Course.all
     @teachers = Teacher.all
   end
@@ -24,7 +24,7 @@ class CohortsController < ApplicationController
   def new
     @cohort = Cohort.new
     @admins = Admin.all
-    @admin = Admin.find(1)
+    @admin = Admin.find(current_admin.id)
     @courses = Course.all
 
   end
@@ -33,7 +33,7 @@ class CohortsController < ApplicationController
   # GET /cohorts/1/edit
   def edit
     @admins = Admin.all
-    @admin = Admin.find(1)
+    @admin = Admin.find(current_admin.id)
     @courses = Course.all
 
   end

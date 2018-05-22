@@ -12,14 +12,14 @@ class StudentsController < ApplicationController
   def index
     @students = Student.all
     @admins = Admin.all
-    @admin = Admin.find(1)
+    @admin = Admin.find(current_admin.id)
   end
 
   # GET /students/1
   # GET /students/1.json
   def show
     @admins = Admin.all
-    @admin = Admin.find(1)
+    @admin = Admin.find(current_admin.id)
 
   end
 
@@ -27,7 +27,7 @@ class StudentsController < ApplicationController
   def new
     @student = Student.new
     @admins = Admin.all
-    @admin = Admin.find(1)
+    @admin = Admin.find(current_admin.id)
   end
 
   # GET /students/1/edit
@@ -39,7 +39,7 @@ class StudentsController < ApplicationController
   def create
     @student = Student.new(student_params)
     @admins = Admin.all
-    @admin = Admin.find(1)
+    @admin = Admin.find(current_admin.id)
 
     respond_to do |format|
       if @student.save

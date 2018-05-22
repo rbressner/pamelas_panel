@@ -8,8 +8,8 @@ class Teacher < ApplicationRecord
   validates :email, presence:true
   validates :age, numericality:true
   validates :education, presence:true
-  has_many :cohorts
-
+  has_many :cohort_teachers
+  has_many :cohorts, through: :cohort_teachers
   def checked(area)
   @teacher.education.nil? ? false : @teacher.education.match(area)
   end

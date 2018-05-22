@@ -7,28 +7,28 @@ class CoursesController < ApplicationController
   def index
     @courses = Course.all
     @admins = Admin.all
-    @admin = Admin.find(1)
+    @admin = Admin.find(current_admin.id)
   end
 
   # GET /courses/1
   # GET /courses/1.json
   def show
     @admins = Admin.all
-    @admin = Admin.find(1)
+    @admin = Admin.find(current_admin.id)
   end
 
   # GET /courses/new
   def new
     @course = Course.new
     @admins = Admin.all
-    @admin = Admin.find(1)
+    @admin = Admin.find(current_admin.id)
 
   end
 
   # GET /courses/1/edit
   def edit
     @admins = Admin.all
-    @admin = Admin.find(1)
+    @admin = Admin.find(current_admin.id)
   end
 
   # POST /courses
@@ -36,7 +36,7 @@ class CoursesController < ApplicationController
   def create
     @course = Course.new(course_params)
     @admins = Admin.all
-    @admin = Admin.find(1)
+    @admin = Admin.find(current_admin.id)
 
     respond_to do |format|
       if @course.save

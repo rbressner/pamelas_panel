@@ -25,15 +25,11 @@
 
 <p>
   <strong>Teacher:</strong>
-  <%= @teacher.cohort.name %>
+  <%= Teacher.first.first_name%> <%= Teacher.first.last_name%>
 </p>
 
-<p>
-  <strong>Student:</strong>
-  <%= @cohort.student %>
-</p>
 
-<div class="create-link"><%= link_to 'Edit', edit_cohort_path(@cohort) %></div> |
+<div class="create-link"><%= link_to 'Edit', edit_cohort_path(@cohort) %></div>
 
 
 </div>

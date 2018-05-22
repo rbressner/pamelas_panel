@@ -7,5 +7,6 @@ class Student < ApplicationRecord
   validates :password, presence:true
   validates :email, presence:true
   validates :education, presence:true
-  has_many :cohorts
+  has_many :cohort_students
+  has_many :cohorts, through: :cohort_students
 end

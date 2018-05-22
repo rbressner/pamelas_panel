@@ -1,68 +1,91 @@
 <%= form_with(model: cohort, local: true) do |form| %>
-  <% if cohort.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(cohort.errors.count, "error") %> prohibited this cohort from being saved:</h2>
+<% if cohort.errors.any? %>
+<div id="error_explanation">
+  <h2><%= pluralize(cohort.errors.count, "error") %> prohibited this cohort from being saved:</h2>
 
-      <ul>
-      <% cohort.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="edit-form">
-  <div class="edit-section">
-    <div class="item-tag">
-    <%= form.label :name %></div>
-    <div class="field"><%= form.text_field :name %>
-  </div>
-</div>
-
-
-<div class="edit-section">
-  <div class="item-tag">
-  <%= form.label :start_date %></div>
-  <div class="field"><span class="date"><%= form.date_select :start_date %></span>
-</div>
-</div>
-
-
-<div class="edit-section">
-  <div class="item-tag">
-  <%= form.label :end_date %></div>
-  <div class="field"><span class="date"><%= form.date_select :end_date %></span>
-</div>
-</div>
-
-<div class="edit-section">
-  <div class="item-tag">
-  <%= form.label :class_hours %></div>
-  <div class="field"><span class="date"><%= form.time_select :class_hours, :ignore_date => true %></span> -
-    <span class="date"><%= form.time_select :class_hours, :ignore_date => true %></span>
-</div>
-</div>
-
-
-<div class="edit-section">
-  <div class="item-tag">
-  <%= form.label :course_id %></div>
-  <div class="field">
-      <%= form.collection_select :course_id, Course.all, :id, :name, prompt: 'Select a Course'%>
-  </div>
-</div>
-
-<div class="edit-section">
-  <div class="item-tag">
-  <%= form.label :teacher_id %></div>
-  <div class="field">
-      <%= form.collection_select :teacher_id, Teacher.all, :id, :first_name, prompt: 'Select a Teacher'%>
-  </div>
-</div>
-
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+  <ul>
+    <% cohort.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+    <% end %>
+  </ul>
 </div>
 <% end %>
+
+<div class="edit-form">
+  <div class="edit-section">
+    <div class="item-tag">
+      <%= form.label :term %></div>
+      <div class="field">
+        <%= form.select :name, [["Summer 2018"],
+        ["Fall 2018"],
+        ["Winter 2018 - 2019"],
+        ["Spring 2019"],
+        ["Summer 2019"]],
+        prompt: 'Select Cohort Term'%>
+      </div>
+    </div>
+
+
+    <div class="edit-section">
+      <div class="item-tag">
+        <%= form.label :start_date %></div>
+        <div class="field"><span class="date"><%= form.date_select :start_date %></span>
+        </div>
+      </div>
+
+
+      <div class="edit-section">
+        <div class="item-tag">
+          <%= form.label :end_date %></div>
+          <div class="field"><span class="date"><%= form.date_select :end_date %></span>
+          </div>
+        </div>
+
+        <div class="edit-section">
+          <div class="item-tag">
+            <%= form.label :class_hours %></div>
+            <div class="field"><span class="date"><%= form.time_select :class_hours, :ignore_date => true %></span> -
+              <span class="date"><%= form.time_select :class_hours, :ignore_date => true %></span>
+            </div>
+          </div>
+
+          <div class="edit-section">
+            <div class="item-tag">
+              <%= form.label :cohort_days %></div>
+              <div class="field">
+                <%= form.select :cohort_days, [["Monday, Tuesday, Wednesday, Thursday, Friday"],
+                ["Monday, Wednesday, Friday"],
+                ["Tuesday, Thursday"],
+                ["Tuesday, Wednesday, Thursday"],
+                ["Monday"],
+                ["Tuesday"],
+                ["Wednesday"],
+                ["Thursday"],
+                ["Friday"]],
+                prompt: 'Select Days of Cohort'%>
+              </div>
+            </div>
+
+
+            <div class="edit-section">
+              <div class="item-tag">
+                <%= form.label :course_id %></div>
+                <div class="field">
+                  <%= form.collection_select :course_id, Course.all, :id, :name, prompt: 'Select a Course'%>
+                </div>
+              </div>
+
+              <div class="edit-section">
+                <div class="item-tag">
+                  <%= form.label :teacher_id %></div>
+                  <div class="field">
+                    <%= form.collection_select :teacher_id, Teacher.all, :id, :first_name, prompt: 'Select a Teacher'%>
+                  </div>
+                </div>
+
+
+                <div class="actions">
+                  <%= form.submit %>
+                </div>
+              </div>
+              <% end %>

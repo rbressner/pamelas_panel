@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_05_22_150038) do
+ActiveRecord::Schema.define(version: 2018_05_22_160456) do
 
   create_table "admins", force: :cascade do |t|
     t.string "username"
@@ -34,6 +34,20 @@ ActiveRecord::Schema.define(version: 2018_05_22_150038) do
     t.index ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
   end
 
+  create_table "cohort_students", force: :cascade do |t|
+    t.integer "student_id"
+    t.integer "cohort_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "cohort_teachers", force: :cascade do |t|
+    t.integer "teacher_id"
+    t.integer "cohort_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "cohorts", force: :cascade do |t|
     t.string "name"
     t.date "start_date"
@@ -44,6 +58,7 @@ ActiveRecord::Schema.define(version: 2018_05_22_150038) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.time "class_hours"
+    t.string "cohort_days"
     t.index ["course_id"], name: "index_cohorts_on_course_id"
     t.index ["student_id"], name: "index_cohorts_on_student_id"
     t.index ["teacher_id"], name: "index_cohorts_on_teacher_id"
