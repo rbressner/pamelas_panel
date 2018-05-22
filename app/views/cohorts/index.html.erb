@@ -1,3 +1,72 @@
+<% if current_teacher %>
+<div class="content">
+<p id="notice"><%= notice %></p>
+
+<h1>Courses</h1>
+<table class="list-all">
+  <thead>
+    <tr>
+      <th>Course</th>
+      <th>Term</th>
+      <th>Days</th>
+      <th>Start date</th>
+      <th>End date</th>
+      <th>Teacher</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @cohorts.each do |cohort| %>
+      <tr>
+        <td><%= cohort.course.name %></td>
+        <td><%= cohort.name %></td>
+        <td><%= cohort.cohort_days %></td>
+        <td><%= cohort.start_date %></td>
+        <td><%= cohort.end_date %></td>
+        <td><%= cohort.id%></td>
+    <% end %>
+  </tbody>
+</table>
+
+
+
+</div>
+<% end %>
+<% if current_student %>
+<div class="content">
+<p id="notice"><%= notice %></p>
+
+<h1>Courses</h1>
+<table class="list-all">
+  <thead>
+    <tr>
+      <th>Course</th>
+      <th>Term</th>
+      <th>Days</th>
+      <th>Start date</th>
+      <th>End date</th>
+      <th>Teacher</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @cohorts.each do |cohort| %>
+      <tr>
+        <td><%= cohort.course.name %></td>
+        <td><%= cohort.name %></td>
+        <td><%= cohort.cohort_days %></td>
+        <td><%= cohort.start_date %></td>
+        <td><%= cohort.end_date %></td>
+        <td><%= cohort.id%></td>
+    <% end %>
+  </tbody>
+</table>
+
+
+
+</div>
+<% end %>
+<% if current_admin %>
 <div class="content">
 <p id="notice"><%= notice %></p>
 
@@ -43,3 +112,4 @@
 
 <div class="create-link"><%= link_to 'New Cohort', new_cohort_path %></div>
 </div>
+<% end %>

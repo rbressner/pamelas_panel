@@ -1,3 +1,39 @@
+<% if current_student %>
+<div class="content">
+  <p id="notice"><%= notice %></p>
+  <div class="sign-in">
+      <div class="animated-words">
+          <span>Action</span>
+          <span>Believe</span>
+          <span>Dare</span>
+          <span>Dream</span>
+          <span>Positivity</span>
+          <span>Smile</span>
+        </div>
+
+          <div class="animated-words-right">
+              <span>Practice</span>
+              <span>Creative</span>
+              <span>Hope</span>
+              <span>Mindfulness</span>
+              <span>Nurture</span>
+              <span>Listen</span>
+            </div>
+    <div class="logo"><%=image_tag("logo.png")%></div>
+
+    <h1 class="welcome">Welcome!</h1>
+    <h2 class="home-action">Please Choose an Action:</h2>
+  <div class="manage-boxes" id="students-boxes">
+
+    <h4><%= link_to 'Manage Profile', current_student %></h4>
+    <h4><%= link_to 'Manage Courses', cohorts_path %></h4>
+  </div>
+
+</div>
+
+<% end %>
+
+<% if current_admin %>
 <div class="content">
   <p id="notice"><%= notice %></p>
   <h1>Students</h1>
@@ -44,3 +80,4 @@
 
         <div class="create-link"><%= link_to 'New Student', new_student_path %></div>
       </div>
+<% end %>

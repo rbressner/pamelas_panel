@@ -39,9 +39,18 @@
   <strong>Education:</strong>
   <%= @teacher.education %>
 </p>
-</div>
+<hr>
 
 
-<div class="create-link"><%= link_to 'Back', teachers_path %>
+<% if teacher_session %>
+<p>
+<strong><%= link_to 'Edit Profile', edit_teacher_path(@teacher) %></strong>
+</p>
+
+
+<% end %>
 </div>
+<% if admin_session %>
+<div class="create-link"><%= link_to 'Back', students_path %>
 </div>
+<% end %>

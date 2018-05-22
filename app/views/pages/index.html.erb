@@ -1,6 +1,4 @@
-<% if admin_session || teacher_session || student_session %>
-"Oops, please go back home"
-<% else %>
+
 <div class="sign-in">
     <div class="animated-words">
         <span>Action</span>
@@ -24,7 +22,7 @@
   <h1 class="welcome">Welcome!</h1>
   <h2>Please Select A User Type To Sign In:</h2>
 
-  <div class="manage-boxes">
+  <div class="manage-boxes-home">
 
     <h4><%= link_to 'Admin', new_admin_session_path %></h4>
     <h4><%= link_to 'Teacher', new_teacher_session_path %></h4>
@@ -34,4 +32,3 @@
 
 </form>
 </div>
-<% end %>

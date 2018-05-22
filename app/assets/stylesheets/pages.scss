@@ -104,4 +104,46 @@ $six: #9b6b9d;
   display: inline-block;
   @extend %words;
 }
+$poppins: 'Poppins', sans-serif;
+$nunito: 'Nunito Sans', sans-serif;
+$varela: 'Varela Round', sans-serif;
+
+.manage-boxes-home {
+  display: flex;
+  flex-flow: row;
+  margin-top: 10%;
+  h4:hover {
+    border: 2px solid #7d5bbe;
+    height: 95px;
+    width: 42%;
+  }
+  h4 {
+    transition: height 1s;
+    transition: width 1s;
+    text-align: center;
+    font-family: $varela;
+    border: 2px solid #2c2541;
+    background: #281b2f;
+    width: 40%;
+    height: 80px;
+    padding-top: 60px;
+    margin: 10px;
+    font-size: 150%;
+    a:visited {
+      color: #b19dd8;
+      text-decoration: none;
+    }
+    a {
+      color: #b19dd8;
+      text-decoration: none;
+    }
+    a:hover {
+      color: white;
+      background: none;
+      text-decoration: underline;
+      cursor: pointer;
+    }
+  }
+}
+
 // Source: http://www.competa.com/blog/changing-words-with-css-animation/

@@ -1,3 +1,4 @@
+<% if current_admin %>
 <div class="content">
 <p id="notice"><%= notice %></p>
 <h1>Courses</h1>
@@ -33,3 +34,4 @@
 
 <div class="create-link"><%= link_to 'New Course', new_course_path %></div>
 </div>
+<% end %>

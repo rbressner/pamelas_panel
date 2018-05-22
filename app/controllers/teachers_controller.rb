@@ -11,7 +11,9 @@ class TeachersController < ApplicationController
   def index
     @teachers = Teacher.all
     @admins = Admin.all
+    if admin_session
     @admin = Admin.find(current_admin.id)
+  end
     @cohorts = Cohort.all
   end
 
@@ -19,14 +21,18 @@ class TeachersController < ApplicationController
   # GET /teachers/1.json
   def show
     @admins = Admin.all
+    if admin_session
     @admin = Admin.find(current_admin.id)
+  end
   end
 
   # GET /teachers/new
   def new
     @teacher = Teacher.new
     @admins = Admin.all
+    if admin_session
     @admin = Admin.find(current_admin.id)
+  end
   end
 
   # GET /teachers/1/edit
@@ -38,7 +44,9 @@ class TeachersController < ApplicationController
   def create
     @teacher = Teacher.new(teacher_params)
     @admins = Admin.all
+    if admin_session
     @admin = Admin.find(current_admin.id)
+  end
 
     respond_to do |format|
       if @teacher.save

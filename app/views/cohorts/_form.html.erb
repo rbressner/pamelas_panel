@@ -83,9 +83,22 @@
                   </div>
                 </div>
 
+                <div class="edit-section">
+                  <div class="item-tag">
+                    <%= form.label :students %></div>
+                    <div class="field">
+                      <% @students.each do |student| %>
+                      <% if @cohort_students.include?(student.id) %>
+                      <%= link_to "Remove #{ student.first_name }", cohort_destroy_student_path(@cohort.id, student.id), method: :delete %><br />
+                      <% else %>
+                      <%= link_to "Add #{ student.first_name }", cohort_add_student_path(@cohort.id, student.id) %><br />
+                      <% end %>
+                      <% end %>
+                    </div>
+                  </div>
 
-                <div class="actions">
-                  <%= form.submit %>
+                  <div class="actions">
+                    <%= form.submit %>
+                  </div>
                 </div>
-              </div>
-              <% end %>
+                <% end %>
