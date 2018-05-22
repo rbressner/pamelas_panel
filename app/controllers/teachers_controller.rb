@@ -12,6 +12,7 @@ class TeachersController < ApplicationController
     @teachers = Teacher.all
     @admins = Admin.all
     @admin = Admin.find(1)
+    @cohorts = Cohort.all
   end
 
   # GET /teachers/1

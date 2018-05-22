@@ -24,11 +24,7 @@
   <%= @teacher.email %>
 </p>
 <hr>
-<p>
-  <strong>Password:</strong>
-  <%= @teacher.password %>
-</p>
-<hr>
+
 <p>
   <strong>Age:</strong>
   <%= @teacher.age %>
@@ -45,6 +41,7 @@
 </p>
 </div>
 
-<%= link_to 'Edit', edit_teacher_path(@teacher) %> |
-<%= link_to 'Back', teachers_path %>
+
+<div class="create-link"><%= link_to 'Back', teachers_path %>
+</div>
 </div>
