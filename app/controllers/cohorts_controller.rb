@@ -15,6 +15,7 @@ class CohortsController < ApplicationController
     end
     @courses = Course.all
     @teachers = Teacher.all
+    @students = Student.all
   end
 
   # GET /cohorts/1
@@ -24,7 +25,7 @@ class CohortsController < ApplicationController
     if admin_session
       @admin = Admin.find(current_admin.id)
     end
-
+    @students = Student.all
   end
 
   # GET /cohorts/new
@@ -35,6 +36,16 @@ class CohortsController < ApplicationController
       @admin = Admin.find(current_admin.id)
     end
     @courses = Course.all
+    @students = Student.all
+
+    @cohort_students = CohortStudent.where(cohort_id: @cohort.id).map do |cohort_student|
+      cohort_student.student_id
+    end
+
+    @cohort_teachers = CohortTeacher.where(cohort_id: @cohort.id).map do |cohort_teacher|
+      cohort_teacher.teacher_id
+    end
+
 
   end
 
@@ -49,6 +60,7 @@ class CohortsController < ApplicationController
 
     @students = Student.all
     @teachers = Teacher.all
+    @cohort = Cohort.find(params[:id])
 
     @cohort_students = CohortStudent.where(cohort_id: @cohort.id).map do |cohort_student|
       cohort_student.student_id
@@ -64,6 +76,7 @@ class CohortsController < ApplicationController
   # POST /cohorts.json
   def create
     @cohort = Cohort.new(cohort_params)
+    @students = Student.all
     @courses = Course.all
     @admins = Admin.all
     if admin_session
@@ -104,6 +117,11 @@ class CohortsController < ApplicationController
     end
   end
 
+  def add_to_cohort
+    @students = Student.all
+    render template: "/cohorts/add_student"
+  end
+
   def add_student
     cohort_student = CohortStudent.new(
       cohort_id: params[:cohort_id],
@@ -117,6 +135,10 @@ class CohortsController < ApplicationController
     end
 
     redirect_to edit_cohort_path(params[:cohort_id])
+  end
+
+  def full_name
+    "#{Student.first_name}. #{Student.last_name}"
   end
 
   def destroy_student

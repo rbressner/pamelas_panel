@@ -4,11 +4,15 @@ Rails.application.routes.draw do
   devise_for :teachers
   devise_for :admins
 
+
   get 'pages/index'
   get 'admins/index'
   get 'admins/show'
+
+  get '/cohorts/add_student' => 'cohorts#add_to_cohort'
   resources :cohorts do
-  get "/students/:student_id", to: "cohorts#add_student", as: "add_student"
+
+  get "/add_student/:student_id", to: "cohorts#add_student", as: "add_student"
   delete "/students/:student_id", to: "cohorts#destroy_student", as: "destroy_student"
   get "/teachers/:teacher_id", to: "cohorts#add_teacher", as: "add_teacher"
   delete "/teachers/:teacher_id", to: "cohorts#destroy_teacher", as: "destroy_teacher"
@@ -17,4 +21,5 @@ Rails.application.routes.draw do
   resources :admins, only: [:index, :show, :edit]
   resources :teachers
   resources :students
+
 end

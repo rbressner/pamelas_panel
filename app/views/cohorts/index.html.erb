@@ -16,15 +16,9 @@
   </thead>
 
   <tbody>
-    <% @cohorts.each do |cohort| %>
       <tr>
-        <td><%= cohort.course.name %></td>
-        <td><%= cohort.name %></td>
-        <td><%= cohort.cohort_days %></td>
-        <td><%= cohort.start_date %></td>
-        <td><%= cohort.end_date %></td>
-        <td><%= cohort.id%></td>
-    <% end %>
+        <td><%= Teacher.first.cohorts.name %></td>
+
   </tbody>
 </table>
 
@@ -97,7 +91,7 @@
         <td><%= cohort.end_date %></td>
         <td><%= cohort.course.name %></td>
         <td><%= cohort.id%></td>
-        <td><%= cohort.id%></td>
+        <td><%= cohort.id %></td>
         <td><%= link_to cohort do %><%= image_tag('view.png') %>
       <% end %></td>
       <td><%= link_to edit_cohort_path(cohort) do %><%= image_tag('edit.png') %>
