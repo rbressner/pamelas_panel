@@ -83,21 +83,21 @@
                   </div>
                 </div>
 
-                <% if current_teacher %>
+
                 <div class="edit-section">
                   <div class="item-tag">
                     <%= form.label :students %></div>
                     <div class="field">
                       <% @students.each do |student| %>
                       <% if @cohort_students.include?(student.id) %>
-                      <%= link_to "Remove #{ student.first_name }", cohort_destroy_student_path(@cohort.id, student.id), method: :delete %><br />
+                      <%= link_to "Remove #{ student.first_name } #{ student.last_name }", cohort_destroy_student_path(@cohort.id, student.id), method: :delete %><br />
                       <% else %>
-                      <%= link_to "Add #{ student.first_name }", cohort_add_student_path(@cohort.id, student.id) %><br />
+                      <%= link_to "Add #{ student.first_name } #{ student.last_name }", cohort_add_student_path(@cohort.id, student.id) %><br />
                       <% end %>
                       <% end %>
                     </div>
                   </div>
-                  <% end %>
+
 
                   <div class="actions">
                     <%= form.submit %>

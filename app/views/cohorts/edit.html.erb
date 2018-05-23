@@ -2,8 +2,13 @@
 <div class="content">
 <h1>Editing Cohort</h1>
 
-<%= render 'form', cohort: @cohort %>
-
+<% @students.each do |student| %>
+<% if @cohort_students.include?(student.id) %>
+<%= link_to "Remove #{ student.first_name } #{ student.last_name }", cohort_destroy_student_path(@cohort.id, student.id), method: :delete %><br />
+<% else %>
+<%= link_to "Add #{ student.first_name } #{ student.last_name }", cohort_add_student_path(@cohort.id, student.id) %><br />
+<% end %>
+<% end %>
 
 <div class="create-link">
 <%= link_to 'Back', cohorts_path %></div>

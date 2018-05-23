@@ -62,7 +62,7 @@ class CohortsController < ApplicationController
     @teachers = Teacher.all
     @cohort = Cohort.find(params[:id])
 
-    @cohort_students = CohortStudent.where(cohort_id: @cohort.id).map do |cohort_student|
+    @cohort_student = CohortStudent.where(cohort_id: @cohort.id).map do |cohort_student|
       cohort_student.student_id
     end
 
@@ -118,6 +118,9 @@ class CohortsController < ApplicationController
   end
 
   def add_to_cohort
+    @cohort_student = CohortStudent.where(cohort_id: @cohort.id).map do |cohort_student|
+      cohort_student.student_id
+    end
     @students = Student.all
     render template: "/cohorts/add_student"
   end

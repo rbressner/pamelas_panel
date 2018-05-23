@@ -2,7 +2,6 @@ class StudentsController < ApplicationController
   before_action :set_student, only: [:show, :edit, :update, :destroy]
 
 
-
   def full_name
     self.first_name + self.last_name
   end

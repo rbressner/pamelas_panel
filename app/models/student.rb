@@ -9,4 +9,9 @@ class Student < ApplicationRecord
   validates :education, presence:true
   has_many :cohort_students
   has_many :cohorts, through: :cohort_students
+
+  def full_name
+    self.first_name + self.last_name
+  end
+  
 end
