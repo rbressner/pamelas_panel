@@ -8,35 +8,35 @@
   <strong>Name:</strong>
   <%= @cohort.name %>
 </p>
-
+<hr>
 <p>
   <strong>Start date:</strong>
   <%= @cohort.start_date %>
 </p>
-
+<hr>
 <p>
   <strong>End date:</strong>
   <%= @cohort.end_date %>
 </p>
-
+<hr>
 <p>
   <strong>Course:</strong>
   <%= @cohort.course.name %>
 </p>
-
+<hr>
 <p>
-  <strong>Teacher:</strong>
-  <%= Teacher.first.first_name%> <%= Teacher.first.last_name%>
+  <strong>Teacher ID:</strong>
+  <%= @cohort.teacher_id %>
 </p>
-
+<hr>
 <p>
   <strong>Number of Students:</strong>
   <%= @cohort.students.count %>
 </p>
-
-
-<div class="create-link"><%= link_to 'Edit', edit_cohort_path(@cohort) %></div>
-
+<hr>
+<p>
+<strong><%= link_to 'Edit', edit_cohort_path(@cohort) %></strong>
+</p>
 
 </div>
 

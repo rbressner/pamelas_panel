@@ -15,6 +15,7 @@ class CohortsController < ApplicationController
     end
     @courses = Course.all
     @teachers = Teacher.all
+    
     @students = Student.all
   end
 

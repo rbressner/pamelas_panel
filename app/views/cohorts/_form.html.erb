@@ -1,4 +1,3 @@
-
 <%= form_with(model: cohort, local: true) do |form| %>
 <% if cohort.errors.any? %>
 <div id="error_explanation">
@@ -50,22 +49,18 @@
             </div>
           </div>
 
-          <div class="edit-section">
-            <div class="item-tag">
-              <%= form.label :cohort_days %></div>
-              <div class="field">
-                <%= form.select :cohort_days, [["Monday, Tuesday, Wednesday, Thursday, Friday"],
-                ["Monday, Wednesday, Friday"],
-                ["Tuesday, Thursday"],
-                ["Tuesday, Wednesday, Thursday"],
-                ["Monday"],
-                ["Tuesday"],
-                ["Wednesday"],
-                ["Thursday"],
-                ["Friday"]],
-                prompt: 'Select Days of Cohort'%>
+
+            <div class="edit-section">
+              <div class="item-tag">
+                <%= form.label :cohort_days %></div>
+                <div class="field">
+                  <%= form.select :cohort_days, [["M - F"],
+                  ["M, W, F"],
+                  ["T, Th"],
+                  ["T, W, Th"]],
+                  prompt: 'Select Cohort Days'%>
+                </div>
               </div>
-            </div>
 
 
             <div class="edit-section">

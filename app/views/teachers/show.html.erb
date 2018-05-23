@@ -39,7 +39,7 @@
   <strong>Education:</strong>
   <%= @teacher.education %>
 </p>
-<hr>
+
 
 
 <% if teacher_session %>
@@ -51,6 +51,6 @@
 <% end %>
 </div>
 <% if admin_session %>
-<div class="create-link"><%= link_to 'Back', students_path %>
+<div class="create-link"><%= link_to 'Back', teachers_path %>
 </div>
 <% end %>
