@@ -26,6 +26,9 @@ class CohortsController < ApplicationController
       @admin = Admin.find(current_admin.id)
     end
     @students = Student.all
+    @cohort_students = CohortStudent.where(cohort_id: @cohort.id).map do |cohort_student|
+      cohort_student.student_id
+    end
   end
 
   # GET /cohorts/new
@@ -61,8 +64,8 @@ class CohortsController < ApplicationController
     @students = Student.all
     @teachers = Teacher.all
     @cohort = Cohort.find(params[:id])
-
-    @cohort_student = CohortStudent.where(cohort_id: @cohort.id).map do |cohort_student|
+    @students = Student.all
+    @cohort_students = CohortStudent.where(cohort_id: @cohort.id).map do |cohort_student|
       cohort_student.student_id
     end
 
@@ -118,7 +121,7 @@ class CohortsController < ApplicationController
   end
 
   def add_to_cohort
-    @cohort_student = CohortStudent.where(cohort_id: @cohort.id).map do |cohort_student|
+    @cohort_students = CohortStudent.where(cohort_id: @cohort.id).map do |cohort_student|
       cohort_student.student_id
     end
     @students = Student.all

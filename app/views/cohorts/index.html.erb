@@ -75,7 +75,7 @@
       <th>End date</th>
       <th>Course</th>
       <th>Teacher</th>
-      <th>Students</th>
+      <th>Number of Students</th>
       <th>View</th>
       <th>Edit</th>
       <th>Delete</th>
@@ -90,8 +90,8 @@
         <td><%= cohort.start_date %></td>
         <td><%= cohort.end_date %></td>
         <td><%= cohort.course.name %></td>
-        <td><%= cohort.id%></td>
         <td><%= cohort.id %></td>
+        <td><%= cohort.students.count %></td>
         <td><%= link_to cohort do %><%= image_tag('view.png') %>
       <% end %></td>
       <td><%= link_to edit_cohort_path(cohort) do %><%= image_tag('edit.png') %>

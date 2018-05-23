@@ -29,6 +29,11 @@
   <%= Teacher.first.first_name%> <%= Teacher.first.last_name%>
 </p>
 
+<p>
+  <strong>Number of Students:</strong>
+  <%= @cohort.students.count %>
+</p>
+
 
 <div class="create-link"><%= link_to 'Edit', edit_cohort_path(@cohort) %></div>
 
