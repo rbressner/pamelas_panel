@@ -100,9 +100,10 @@
         <td><%= cohort.start_date %></td>
         <td><%= cohort.end_date %></td>
         <td><%= cohort.course.name %></td>
-        <td><%= link_to teacher_path(cohort.teacher_id) do %><%= Teacher.find(cohort.teacher_id).first_name %>
-        <% end %></td>
-        <td><%= cohort.students.count %></td>
+        <td><%= Teacher.find(cohort.teacher_id).first_name %></td>
+        <td><%= link_to cohorts_add_student_path(cohort) do %>
+          <%= cohort.students.count %></td>
+        <% end %>
         <td><%= link_to cohort do %><%= image_tag('view.png') %>
       <% end %></td>
       <td><%= link_to edit_cohort_path(cohort) do %><%= image_tag('edit.png') %>

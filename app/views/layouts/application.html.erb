@@ -45,7 +45,7 @@
     <nav>
       <h4><%= current_student.last_name %>, <%= current_student.first_name %></h4>
       <ul class="admin-nav">
-        <% Student.all.each do |teacher| %>
+        <% Student.all.each do |student| %>
             <li><%= link_to 'Home', students_path %></li>
             <li><%= link_to 'Profile', current_student %></li>
             <li><%= link_to 'Courses', cohorts_path %></li>

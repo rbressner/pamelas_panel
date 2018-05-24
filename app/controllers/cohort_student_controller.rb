@@ -6,6 +6,7 @@ class CohortStudentController < ApplicationController
     # GET /cohorts.json
     def index
       @cohorts = Cohort.all
+      @selected = Cohort.find(:cohort_id)
       @admins = Admin.all
       if admin_session
         @admin = Admin.find(current_admin.id)
@@ -16,6 +17,8 @@ class CohortStudentController < ApplicationController
       @courses = Course.all
       @teachers = Teacher.all
       @students = Student.all
+
+      
     end
 
     # GET /cohorts/1

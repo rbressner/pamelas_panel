@@ -15,7 +15,7 @@ class CohortsController < ApplicationController
     end
     @courses = Course.all
     @teachers = Teacher.all
-    
+
     @students = Student.all
   end
 
@@ -121,10 +121,14 @@ class CohortsController < ApplicationController
     end
   end
 
+  def cohort_students_list
+    @students = Cohort.find(params[:id]).students
+    @cohort = Cohort.find(params[:id]).course.name
+    render template: "/cohorts/students"
+  end
+
   def add_to_cohort
-    @cohort_students = CohortStudent.where(cohort_id: @cohort.id).map do |cohort_student|
-      cohort_student.student_id
-    end
+
     @students = Student.all
     render template: "/cohorts/add_student"
   end
