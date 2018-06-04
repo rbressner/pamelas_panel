@@ -9,7 +9,7 @@ class CreateTeachers < ActiveRecord::Migration[5.2]
       t.integer :age
       t.integer :salary
       t.string :education
-      t.references :admin, foreign_key: true
+      t.integer :admin_id
 
       t.timestamps
     end
