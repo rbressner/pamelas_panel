@@ -1,8 +1,25 @@
 <% if current_admin %>
 <div class="content">
 <h1>Editing Cohort</h1>
-
+<%= form_with model: @cohort do |form| %>
+<div class="edit-form">
+  <div class="edit-section">
+    <div class="item-tag">
+      <%= form.label :students %></div>
+      <div class="field">
+        <% @students.each do |student| %>
+        <% if @cohort_students.include?(student.id) %>
+        <%= link_to "Remove #{ student.first_name } #{ student.last_name }", cohort_destroy_student_path(@cohort.id, student.id), method: :delete %><br />
+        <% else %>
+        <%= link_to "Add #{ student.first_name } #{ student.last_name }", cohort_add_student_path(@cohort.id, student.id) %><br />
+        <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <% end %>
 <%= render 'form', cohort: @cohort %>
+
 
 
 
